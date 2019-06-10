@@ -1,0 +1,7 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+.text-muted-error {
+    color: red !important;
+    font-weight: 500;
+    font-size: 12px;
+}
