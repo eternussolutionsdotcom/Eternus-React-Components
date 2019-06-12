@@ -17,7 +17,7 @@ export default class DropdownComponent extends Component {
                     title="Test dropdown" 
                     variant="danger" 
                     options={options}
-                    error = {true}
+                    error = {false}
                     errorMessage = "Something is wrong" />
         )
     }
