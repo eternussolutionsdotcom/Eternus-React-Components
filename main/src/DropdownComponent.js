@@ -14,11 +14,7 @@ export default class DropdownComponent extends Component {
         ];
         return (
                  <Dropdown 
-                    title="Dropdown" 
-                    variant="success" 
-                    options={options}
-                    error = {true}
-                    errorMessage = "Error message" />
+                   />
         )
     }
 }
