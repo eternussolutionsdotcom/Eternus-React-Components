@@ -15,16 +15,16 @@ const dropdown = props => {
                 <Dropdown.Toggle variant={props.variant}  split id="dropdown-split-basic"/>
                 <Dropdown.Menu>
                     {
-                       props.options.length > 0 ? 
                        props.options.map((option,id) => {
                                 return <Dropdown.Item 
                                             key={id} 
                                             href={option.Link}
                                             onClick={option.onClick}
+                                            disabled={option.disabled}
                                         >
                                             <i className={option.icon}></i> {option.optionName} 
                                         </Dropdown.Item >
-                            }) : <Dropdown.Item disabled={true}> No options </Dropdown.Item>
+                            }) 
                     }
                 </Dropdown.Menu>
             </Dropdown>
@@ -39,21 +39,24 @@ const dropdown = props => {
 }
 
 dropdown.propTypes = {
-    title : PropTypes.string.isRequired,
-    options: PropTypes.array.isRequired,
-    error : PropTypes.bool,
-    errorMessage : PropTypes.string,
-    variant : PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    options: PropTypes.arrayOf(PropTypes.object),
+    error: PropTypes.bool,
+    errorMessage: PropTypes.string,
+    variant: PropTypes.string.isRequired,
     dropDirection: PropTypes.string,
 }
 
 dropdown.defaultProps = {
-    title : "Dropdown",
-    variant : "success",
-    options : [],
-    error : false,
-    errorMessage : "",
-    dropDirection : "down",
+    title: "Dropdown",
+    variant: "success",
+    options: [{
+        optionName: "No options",
+        disabled: true
+    }],
+    error: false,
+    errorMessage: "",
+    dropDirection: "down",
 }
 
 export default dropdown;

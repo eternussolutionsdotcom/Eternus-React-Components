@@ -56,12 +56,23 @@ export default class Sample extends Component {
 
 Common props you need to specify include:
 
-- `title` - title for the dropdown
-- `variant` - color for the dropdown ['success', 'danger', 'warning', 'info', 'primary']
-- `dropDirection` - determines the direction and location of the Menu in relation to
-it's Toggle.
-- `options` - Option menu for dropdown menu items
-- `error` - allow the user trigger an error
-- `errorMessage` - error message to be displayed
+| **Props** | **Default** | **Type** | **Description** |
+| --- | --- | --- | --- |
+| title | Dropdown | String | Title for the dropdown  |
+| variant | 'success' | 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' | Color for the dropdown  |
+| dropDirection | down | String | Determines the direction and location of the Menu in relation to its toggle  |
+| options | Empty array | Array of objects | Option menu for dropdown menu items  |
+| error | false | Boolean | Allows the user to trigger an error  |
+| errorMessage | Empty String | String | Error message to be displayed  |
 
 
+
+**#Options array object keys**
+
+| **Key** | **Type** | **Default** | **Description** |
+| --- | --- | --- | --- |
+| optionName  | String |   | Name for menu item |
+| onClick  | function |   | Callback fired when the menu item is clicked |
+| Link  | String |   | href link associated with menu item |
+| icon  | String |   | Icon to be displayed along with menu item name |
+| Disabled  | Boolean | false | Disable the menu item, making it unselectable |
