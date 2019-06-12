@@ -5,16 +5,18 @@ import {
     Button,
     FormControl
 } from "react-bootstrap";
+import PropTypes from 'prop-types'
 
 const dropdown = props => {
     return (
         <div className="base-padding">
-            <Dropdown as={ButtonGroup}  drop={props.dropDirection ? props.dropDirection : "down"}>
+            <Dropdown as={ButtonGroup}  drop={props.dropDirection}>
                 <Button variant={props.variant}>{props.title}</Button>
                 <Dropdown.Toggle variant={props.variant}  split id="dropdown-split-basic"/>
                 <Dropdown.Menu>
                     {
-                       props.options !== undefined && props.options.length > 0 ? props.options.map((option,id) => {
+                       props.options.length > 0 ? 
+                       props.options.map((option,id) => {
                                 return <Dropdown.Item 
                                             key={id} 
                                             href={option.Link}
@@ -35,4 +37,23 @@ const dropdown = props => {
         </div>
     )
 }
-export {dropdown as Dropdown};
+
+dropdown.propTypes = {
+    title : PropTypes.string.isRequired,
+    options: PropTypes.array.isRequired,
+    error : PropTypes.bool,
+    errorMessage : PropTypes.string,
+    variant : PropTypes.string.isRequired,
+    dropDirection: PropTypes.string,
+}
+
+dropdown.defaultProps = {
+    title : "Dropdown",
+    variant : "success",
+    options : [],
+    error : false,
+    errorMessage : "",
+    dropDirection : "down",
+}
+
+export default dropdown;

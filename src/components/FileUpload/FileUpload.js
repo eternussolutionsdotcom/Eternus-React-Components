@@ -8,4 +8,4 @@ const FileUpload = props => {
     )
 }
 
-export {FileUpload}
+export default FileUpload;
