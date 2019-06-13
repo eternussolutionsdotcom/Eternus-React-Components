@@ -59,7 +59,7 @@ Common props you need to specify include:
 | **Props** | **Default** | **Type** | **Description** |
 | --- | --- | --- | --- |
 | title | Dropdown | String | Title for the dropdown  |
-| variant | 'success' | 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' | Color for the dropdown  |
+| variant | 'success' | 'primary', 'secondary' , 'success' ,'danger' , 'warning' , 'info' , 'dark' , 'light' | Color for the dropdown  |
 | dropDirection | down | String | Determines the direction and location of the Menu in relation to its toggle  |
 | options | Empty array | Array of objects | Option menu for dropdown menu items  |
 | error | false | Boolean | Allows the user to trigger an error  |

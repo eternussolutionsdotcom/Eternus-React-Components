@@ -3,9 +3,10 @@ import {Dropdown} from '../../src';
 
 export default class DropdownComponent extends Component {
 
- optionClicked = () => {
+optionClicked = () => {
         console.log("Hello I am clicked");
     };
+
     render() {
         const options = [
             {optionName : "Action 1",onClick: this.optionClicked, Link : "#/action1", icon : 'fa fa-arrow-right'},
