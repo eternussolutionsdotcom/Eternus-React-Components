@@ -59,8 +59,8 @@ Common props you need to specify include:
 | **Props** | **Default** | **Type** | **Description** |
 | --- | --- | --- | --- |
 | title | Dropdown | String | Title for the dropdown  |
-| variant | 'success' | 'primary', 'secondary' , 'success' ,'danger' , 'warning' , 'info' , 'dark' , 'light' | Color for the dropdown  |
-| dropDirection | down | String | Determines the direction and location of the Menu in relation to its toggle  |
+| variant | success | String ['primary', 'secondary' , 'success' ,'danger' , 'warning' , 'info' , 'dark' , 'light'] | Color for the dropdown  |
+| dropDirection | down | String ['up', 'down', 'left', 'right']  | Determines the direction and location of the Menu in relation to its toggle  |
 | options | Empty array | Array of objects | Option menu for dropdown menu items  |
 | error | false | Boolean | Allows the user to trigger an error  |
 | errorMessage | Empty String | String | Error message to be displayed  |
@@ -72,7 +72,7 @@ Common props you need to specify include:
 | **Key** | **Type** | **Default** | **Description** |
 | --- | --- | --- | --- |
 | optionName  | String |   | Name for menu item |
-| onClick  | function |   | Callback fired when the menu item is clicked |
+| onClick  | Function |   | Callback fired when the menu item is clicked |
 | Link  | String |   | href link associated with menu item |
 | icon  | String |   | Icon to be displayed along with menu item name |
-| Disabled  | Boolean | false | Disable the menu item, making it unselectable |
+| disabled  | Boolean | false | Disable the menu item, making it unselectable |
