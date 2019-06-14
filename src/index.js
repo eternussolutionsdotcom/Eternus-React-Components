@@ -1,6 +1,6 @@
 //Components
-import dropdown from "./components/Dropdown/Dropdown";
-export { dropdown as Dropdown };
+import DropdownComponent from "./components/Dropdown/Dropdown";
+export {DropdownComponent as Dropdown};
 
 import ExportToExcel from "./components/ExportToExcel/ExportToExcel";
 export { ExportToExcel };

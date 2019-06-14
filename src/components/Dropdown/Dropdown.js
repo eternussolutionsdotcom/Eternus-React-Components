@@ -7,7 +7,7 @@ import {
 } from "react-bootstrap";
 import PropTypes from 'prop-types'
 
-const dropdown = props => {
+const DropdownComponent = props => {
     return (
         <div className="base-padding">
             <Dropdown as={ButtonGroup}  drop={props.dropDirection}>
@@ -38,7 +38,7 @@ const dropdown = props => {
     )
 }
 
-dropdown.propTypes = {
+DropdownComponent.propTypes = {
     title: PropTypes.string.isRequired,
     options: PropTypes.arrayOf(PropTypes.object),
     error: PropTypes.bool,
@@ -47,7 +47,7 @@ dropdown.propTypes = {
     dropDirection: PropTypes.string,
 }
 
-dropdown.defaultProps = {
+DropdownComponent.defaultProps = {
     title: "Dropdown",
     variant: "success",
     options: [{
@@ -59,4 +59,4 @@ dropdown.defaultProps = {
     dropDirection: "down",
 }
 
-export default dropdown;
+export default DropdownComponent;

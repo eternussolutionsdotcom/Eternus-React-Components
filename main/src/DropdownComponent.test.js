@@ -1,13 +1,13 @@
 import React from "react";
 import Enzyme, { shallow, mount } from "enzyme";
-import {Dropdown} from "../../src/components/Dropdown/Dropdown";
+import DropdownComponent from "../../src/components/Dropdown/Dropdown";
 import Adapter from "enzyme-adapter-react-16";
 
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("Dropdown component", () => {
   it("renders the component", () => {
-    const wrapper = shallow(<Dropdown  />);
+    const wrapper = shallow(<DropdownComponent  />);
     expect(wrapper.exists()).toBe(true);
   });
 
@@ -20,7 +20,7 @@ describe("Dropdown component", () => {
           error : true,
           errorMessage : "Something is wrong"
       }
-    const wrapper = mount(<Dropdown {...defaultProps} />);
+    const wrapper = mount(<DropdownComponent {...defaultProps} />);
     expect(wrapper.props()).toEqual(defaultProps);
   });
 });
