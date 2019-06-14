@@ -7,3 +7,12 @@
 .base-padding {
     padding: 2px !important;
 }
+
+ul {
+    list-style-type: none;
+    }
+
+li a{ color: black; }
+
+.uploadBtn{ float: right; }
+
