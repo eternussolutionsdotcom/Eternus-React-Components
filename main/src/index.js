@@ -9,6 +9,6 @@ import FileUploadComponent from "./FileUploadComponent";
 
 const App = () => (
      // <DropdownComponent/>
-     <FileUploadComponent/>
+      <FileUploadComponent/>
 );
 render(<App />, document.getElementById("root"));
