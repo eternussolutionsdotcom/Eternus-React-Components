@@ -3,16 +3,25 @@
 [![NPM](https://img.shields.io/npm/v/react-select.svg)](https://www.npmjs.com/package/react-bootstrap)
 
 
-Simple Dropdown component for React, inspired by react-bootstrap.
+React components inspired by react-bootstrap.
 
-**Install:**
+# Availale components
+
+ - Dropdown
+ - Login Component
+ - File Upload
+ - Export to Excek
+ 
+
+# Install
+
 ``` bash
 $npm install eternus-react-components
 ```
 
-## Dropdown
+# Dropdown
 
-**#Usage**
+**Usage**
 
 ```js
 import {Dropdown} from "eternus-react-components";
@@ -52,7 +61,7 @@ export default class Sample extends Component {
 
 ```
 
-**#Props**
+**Props**
 
 Common props you need to specify include:
 
