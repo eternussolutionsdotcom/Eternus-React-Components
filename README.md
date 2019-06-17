@@ -10,7 +10,7 @@ React components inspired by react-bootstrap.
  - Dropdown
  - Login Component
  - File Upload
- - Export to Excek
+ - Export to Excel
  
 
 # Install
@@ -76,7 +76,7 @@ Common props you need to specify include:
 
 
 
-**#Options array object keys**
+**Options array object keys**
 
 | **Key** | **Type** | **Default** | **Description** |
 | --- | --- | --- | --- |
