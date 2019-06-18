@@ -150,3 +150,7 @@ Common props you need to specify include:
 | signUpLink          |              | string                                                                                         | Redirect link for sign up                          |
 | error               | false        | Boolean                                                                                        | Trigger error                                      |
 | errorMessage        | Empty String | string                                                                                         | Error message to be displayed                      |                         |
+
+# License
+
+This project is licensed under the MIT License.
