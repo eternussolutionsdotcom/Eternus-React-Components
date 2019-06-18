@@ -198,17 +198,17 @@ Common props you need to specify include:
 
 
 
-**Uploaded File Array Structure**
+**File response array structure after upload**
 
 ```js
 [
 	{
-	name: "Test1.txt",
-	lastModified: 1560493560484,
-	lastModifiedDate: Fri Jun 14 2019 11:56:00 GMT+0530 (India Standard Time),
-	webkitRelativePath: "",
-	size: 967,
-	…}
+        name: "fileName.txt",
+        lastModified: 1560493560484,
+        lastModifiedDate: Fri Jun 14 2019 11:56:00 GMT+0530 (India Standard Time),
+        webkitRelativePath: "",
+        size: 967
+    }
 ]
 
 ```
