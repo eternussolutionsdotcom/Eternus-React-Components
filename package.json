@@ -1,12 +1,10 @@
 {
-  "name": "my-test-drop-component",
+  "name": "eternus-react-components",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest --watchAll --verbose",
-    "test:watch": "jest --watchAll --verbose",
-    "test:coverage": "jest --verbose --coverage",
     "start": "webpack-dev-server --mode development",
     "transpile": "babel src -d dist --copy-files",
     "prepublishOnly": "npm run transpile",
@@ -16,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/snehalPatil29/Eternus-React-Components.git"
+    "url": "git+https://github.com/eternussolutionsdotcom/Eternus-React-Components"
   },
   "author": "Snehal Patil",
   "license": "ISC",
@@ -25,9 +23,9 @@
     "react-dom": "^16.3.0"
   },
   "bugs": {
-    "url": "https://github.com/snehalPatil29/Eternus-React-Components/issues"
+    "url": "https://github.com/eternussolutionsdotcom/Eternus-React-Components/issues"
   },
-  "homepage": "https://github.com/snehalPatil29/Eternus-React-Components#readme",
+  "homepage": "https://github.com/eternussolutionsdotcom/Eternus-React-Components#readme",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",

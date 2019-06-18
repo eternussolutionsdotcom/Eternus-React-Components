@@ -36,7 +36,7 @@ export default class FileUpload extends Component {
 
     if (Count == 0) {
       if (this.props.accept !== "") {
-
+        
         let acceptExtension = [];
         let fileType = this.props.accept.split(",");
         fileType.forEach((fileType) => {
@@ -54,7 +54,6 @@ export default class FileUpload extends Component {
           this.setState({ status: "Invalid file extension " + invalidFiles });
         } else if (this.state.files.length > 0) {
           this.setState({ status: "Your files are uploaded successfully.", files: [] });
-          console.log(this.state.files);
         }
       } else if (this.state.files.length > 0) {
         this.setState({ status: "Your files are uploaded successfully.", files: [] });
