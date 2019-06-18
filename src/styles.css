@@ -34,3 +34,41 @@ li a{ color: black; }
   label{
     cursor: pointer;
   }
+.TitleStyle
+{
+   float: center
+}
+.container  {
+  
+    width: 100%;
+    top: 100px; 
+    border: 0 !important;
+   
+  }
+  
+  .container .row {
+    margin: 0 auto;
+  }
+  .ButtonClass
+  {
+    width: 100% !important;  
+      
+  }
+  .fontClass
+  {
+    font-size: 12px;
+    float:inline-start
+  }
+
+  .linkClass
+  {
+    font-size: 12px;
+    float: right;
+    }
+
+  .error{
+    text-emphasis: bold;
+    font-size: 12px;
+    margin-top: -5%;
+    margin-bottom: 5%;
+  }
