@@ -1,0 +1,18 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+.showError {
+    display: inherit !important;
+}
+
+.base-padding {
+    padding: 2px !important;
+}
+
+ul {
+    list-style-type: none;
+    }
+
+li a{ color: black; }
+
+#uploadBtn{ float: right; }
+

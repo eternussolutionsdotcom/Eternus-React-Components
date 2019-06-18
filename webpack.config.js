@@ -18,7 +18,7 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.css$/,
+                test: /\.(css)$/,
                 use: ["style-loader", "css-loader"]
             }
         ]
@@ -28,6 +28,6 @@ module.exports = {
         extensions: [".js", ".jsx"]
     },
     devServer: {
-        port: 3001
+        port: 3000
     }
 };
