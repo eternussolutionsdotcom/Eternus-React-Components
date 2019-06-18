@@ -16,7 +16,7 @@ React components inspired by react-bootstrap.
 # Install
 
 ``` bash
-$npm install eternus-react-components
+$npm install eternus-react-component
 ```
 
 # Dropdown
@@ -24,7 +24,7 @@ $npm install eternus-react-components
 **Usage**
 
 ```js
-import {Dropdown} from "eternus-react-components";
+import {Dropdown} from "eternus-react-component";
 
 export default class Sample extends Component {
 
@@ -93,7 +93,7 @@ Common props you need to specify include:
 
 ```js
 
-import {Login} from "eternus-react-components";
+import {Login} from "eternus-react-component";
 
 export default class Sample extends Component {
 
@@ -103,7 +103,6 @@ export default class Sample extends Component {
 
     render() { 
         return (
-            
                 <Login
                     title="Login"
                     usernameType="email"
@@ -119,7 +118,6 @@ export default class Sample extends Component {
                     error={false}
                     errorMessage="Invalid username or password"    
                 />
-
         )
     }
 }
@@ -157,26 +155,25 @@ Common props you need to specify include:
 **Usage**
 
 ```js
-import {FileUpload} from "eternus-react-components";
+import {FileUpload} from "eternus-react-component";
 
 export default class Sample extends Component {
 
-  
+   getFiles = (files) => {
+        //console.log("files",files)
+    }
   render() {
  
-        return (
-            <div>;
-                
+        return (  
 				<FileUpload  
 					browseButtonTitle = "Browse"
 					uploadButtonTitle = "Upload"
 					accept = ".xls,.xlsx,.txt"
 					size = {1}
 					multiple = {true}
-					variant = "success"
+                    variant = "success"
+                    fileResponse = {this.getFiles}
 				/> 
-				
-            </div>
         )
     }
 }
@@ -195,6 +192,7 @@ Common props you need to specify include:
 | size |  Number | Number | Allows the user to restrict file size  |
 | multiple | false | Boolean | Define single or multiple file selection criteria  |
 | variant | success | String ['primary', 'secondary' , 'success' ,'danger' , 'warning' , 'info' , 'dark' , 'light'] | Color for the Browse and Upload Button  |
+| fileResponse |   | Function | Callback function to recieve uploaded files |
 
 
 

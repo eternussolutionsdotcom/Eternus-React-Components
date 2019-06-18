@@ -36,7 +36,7 @@ export default class FileUpload extends Component {
 
     if (Count == 0) {
       if (this.props.accept !== "") {
-        
+
         let acceptExtension = [];
         let fileType = this.props.accept.split(",");
         fileType.forEach((fileType) => {
@@ -53,9 +53,11 @@ export default class FileUpload extends Component {
         if (invalidFiles.length > 0) {
           this.setState({ status: "Invalid file extension " + invalidFiles });
         } else if (this.state.files.length > 0) {
+          this.props.fileResponse(this.state.files);
           this.setState({ status: "Your files are uploaded successfully.", files: [] });
         }
       } else if (this.state.files.length > 0) {
+        this.props.fileResponse(this.state.files);
         this.setState({ status: "Your files are uploaded successfully.", files: [] });
       }
     }
@@ -83,7 +85,6 @@ export default class FileUpload extends Component {
         <div className="row">
           <Card>
             <Card.Header>
-
               <div className="row">
                 <div className="col-12">
                   <FormControl
@@ -138,7 +139,8 @@ FileUpload.propTypes = {
   accept: PropTypes.string,
   size: PropTypes.number,
   multiple: PropTypes.bool,
-  variant: PropTypes.string.isRequired
+  variant: PropTypes.string.isRequired,
+  fileResponse : PropTypes.func.isRequired
 }
 
 FileUpload.defaultProps = {
