@@ -3,7 +3,7 @@ import { Card, Button, FormControl } from "react-bootstrap";
 import $ from 'jquery';
 import PropTypes from 'prop-types'
 
-export default class fileupload extends Component {
+export default class FileUpload extends Component {
 
   constructor(props) {
     super(props);
@@ -11,77 +11,64 @@ export default class fileupload extends Component {
       files: [],
       status: ""
     };
-    this.deleteFile = this.deleteFile.bind(this);
-    this.uploadFile = this.uploadFile.bind(this);
   }
 
-  deleteFile(File) {
-    return () => {
-      this.setState(prevState => ({
-        files: prevState.files.filter(file => file.name !== File)
-      }));
-    };
+  getFile = (e) => {
+    this.setState({ files: Array.from(e.target.files) });
   }
 
+  deleteFile = (index) => {
+    let files = [...this.state.files];
+    files.splice(index, 1);
+    this.setState({ files })
+  }
 
-  uploadFile(accept, size) {
-    return () => {
-      this.setState({ status: "" });
-      var acceptExtension = new Array();
-      var str, fileType;
-      str = accept;
-      fileType = str.split(",");
+  uploadFile = () => {
+    this.setState({ status: "" });
 
-      for (var i = 0; i < fileType.length; i++) {
-        var ext = fileType[i].replace(".", "");
-        acceptExtension.push(ext);
+    var Count = 0;
+    this.state.files.forEach((file) => {
+      if (file.size > this.props.size * 1000) {
+        Count++;
+        this.setState({ status: "File size must under " + this.props.size + "KB." });
       }
+    });
 
-      var Count = 0;
-      for (var i = 0; i < this.state.files.length; i++) {
-        if (this.state.files[i].size > size) {
-          Count++;
-          this.setState({ status: "File size must under " + size / 1000 + "KB." });
-        }
-      }
+    if (Count == 0) {
+      if (this.props.accept !== "") {
 
-      if (Count == 0) {
-        if (accept != "") {
-          var invalid = [];
-          for (var i = 0; i < this.state.files.length; i++) {
-            str = this.state.files[i].name;
-            fileType = str.split(".");
-            if ($.inArray(fileType[1], acceptExtension) == -1) {
-              invalid.push(" "+str.substring(str.indexOf(".")));
-            }
+        let acceptExtension = [];
+        let fileType = this.props.accept.split(",");
+        fileType.forEach((fileType) => {
+          acceptExtension.push(fileType.replace(".", ""));
+        });
+        let invalidFiles = [];
+
+        this.state.files.forEach((file) => {
+          fileType = file.name.split(".");
+          if ($.inArray(fileType[1], acceptExtension) == -1) {
+            invalidFiles.push(" " + file.name.substring(file.name.indexOf(".")));
           }
-          if (invalid.length > 0) {
-            this.setState({ status: "Invalid file extension! " + invalid });
-          } else if(this.state.files.length > 0) {
-            this.setState({ status: "Your files uploded successfully." });
-            console.log(this.state.files);
-            this.setState({ files: [] });
-          }
-        } else if(this.state.files.length > 0) {
-          this.setState({ status: "Your files uploded successfully." });
+        });
+        if (invalidFiles.length > 0) {
+          this.setState({ status: "Invalid file extension " + invalidFiles });
+        } else if (this.state.files.length > 0) {
+          this.setState({ status: "Your files are uploaded successfully.", files: [] });
           console.log(this.state.files);
-          this.setState({ files: [] });
         }
+      } else if (this.state.files.length > 0) {
+        this.setState({ status: "Your files are uploaded successfully.", files: [] });
       }
-    };
+    }
   }
 
   render() {
 
-    const getFile = (e) => {
-      this.setState({ files: Array.from(e.target.files) });
-    }
-
     const fileItems = this.state.files.map((file, index) =>
       <li key={index} title={file.name}>
         {file.name}{' '}
-        [{file.size / 1000}K]
-            {' '}<a href="#" onClick={this.deleteFile(file.name)} title={'Remove ' + file.name}>
+        [{file.size / 1000}KB]
+        {' '} <a href="#" onClick={() => this.deleteFile(index)} title={'Remove ' + file.name}>
           <i className="fa fa-times" aria-hidden="true"></i></a>
       </li>
     );
@@ -90,9 +77,9 @@ export default class fileupload extends Component {
       ? "No file selected."
       : (this.state.files.length) + " file selected"
 
-    var ext = this.props.accept.split('.').join(' ');
+    let acceptedExtTypes = this.props.accept.split('.').join(' ');
     return (
-      
+
       <div className="container">
         <div className="row">
           <Card>
@@ -101,42 +88,42 @@ export default class fileupload extends Component {
               <div className="row">
                 <div className="col-12">
                   <FormControl
-                      id="fileInput"
-                      type="file"
-                      accept={this.props.accept}
-                      multiple={this.props.multiple}
-                      onChange={(e) => getFile(e)}
-                      id="file"
-                      className="inputfile"
+                    id="fileInput"
+                    type="file"
+                    accept={this.props.accept}
+                    multiple={this.props.multiple}
+                    onChange={(e) => this.getFile(e)}
+                    id="file"
+                    className="inputfile"
                   />
                   <label htmlFor="file">
-                      <Button variant={this.props.variant}>
-                      <i className="fa fa-paperclip fa-sm" aria-hidden="true"></i> {this.props.title1}
-                      </Button>
+                    <Button variant={this.props.variant + " btn-sm"}>
+                      <i className="fa fa-paperclip fa-sm" aria-hidden="true"></i> {this.props.browseButtonTitle}
+                    </Button>
                   </label>
                   <span>
-                      &nbsp;{fileselected}
+                    &nbsp;{fileselected}
                   </span>
                 </div>
               </div>
               <div>
                 {
                   (this.props.accept.length > 0)
-                    ? <div>Please upload only {ext} extention files.</div>
+                    ? <div>Please upload only {acceptedExtTypes} extention files.</div>
                     : <div></div>
                 }</div>
             </Card.Header>
             <Card.Body>
-                <ul>{fileItems}</ul>
+              <ul>{fileItems}</ul>
             </Card.Body>
             <Card.Footer>
               <div className="row">
                 <div className="col-10" style={{ float: 'left' }}>{this.state.status}</div>
-                  <div className="col-2">
-                    <Button variant={this.props.variant} id="uploadBtn"
-                    onClick={this.uploadFile(this.props.accept, this.props.size)}>{this.props.title2}
-                    </Button>
-                  </div>
+                <div className="col-2">
+                  <Button variant={this.props.variant + " btn-sm"} id="uploadBtn"
+                    onClick={() => this.uploadFile()}>{this.props.uploadButtonTitle}
+                  </Button>
+                </div>
               </div>
             </Card.Footer>
           </Card>
@@ -146,20 +133,20 @@ export default class fileupload extends Component {
   }
 }
 
-fileupload.propTypes = {
-  title1: PropTypes.string.isRequired,
-  title2: PropTypes.string.isRequired,
+FileUpload.propTypes = {
+  browseButtonTitle: PropTypes.string.isRequired,
+  uploadButtonTitle: PropTypes.string.isRequired,
   accept: PropTypes.string,
   size: PropTypes.number,
-  multiple: PropTypes.string,
+  multiple: PropTypes.bool,
   variant: PropTypes.string.isRequired
 }
 
-fileupload.defaultProps = {
-  title1: "Browse",
-  title2: "Upload",
+FileUpload.defaultProps = {
+  browseButtonTitle: "Browse",
+  uploadButtonTitle: "Upload",
   accept: "",
-  size: 1000,
-  multiple: "",
-  variant: "success btn-sm"
+  size: 1,
+  multiple: true,
+  variant: "success"
 }
