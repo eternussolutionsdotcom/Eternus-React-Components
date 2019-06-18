@@ -151,6 +151,69 @@ Common props you need to specify include:
 | error               | false        | Boolean                                                                                        | Trigger error                                      |
 | errorMessage        | Empty String | string                                                                                         | Error message to be displayed                      |                         |
 
+
+# Fileupload
+
+**Usage**
+
+```js
+import {FileUpload} from "eternus-react-components";
+
+export default class Sample extends Component {
+
+  
+  render() {
+ 
+        return (
+            <div>;
+                
+				<FileUpload  
+					browseButtonTitle = "Browse"
+					uploadButtonTitle = "Upload"
+					accept = ".xls,.xlsx,.txt"
+					size = {1}
+					multiple = {true}
+					variant = "success"
+				/> 
+				
+            </div>
+        )
+    }
+}
+
+```
+
+**Props**
+
+Common props you need to specify include:
+
+| **Props** | **Default** | **Type** | **Description** |
+| --- | --- | --- | --- |
+| browseButtonTitle | Browse | String | Title for the Browse Button  |
+| uploadButtonTitle | Upload | String | Title for the Upload Button  |
+| accept | Empty String | String ".xls,.xlsx,.txt"  | Allows the user to restrict file extensions  |
+| size |  Number | Number | Allows the user to restrict file size  |
+| multiple | false | Boolean | Define single or multiple file selection criteria  |
+| variant | success | String ['primary', 'secondary' , 'success' ,'danger' , 'warning' , 'info' , 'dark' , 'light'] | Color for the Browse and Upload Button  |
+
+
+
+**Uploaded File Array Structure**
+
+```js
+[
+	{
+	name: "Test1.txt",
+	lastModified: 1560493560484,
+	lastModifiedDate: Fri Jun 14 2019 11:56:00 GMT+0530 (India Standard Time),
+	webkitRelativePath: "",
+	size: 967,
+	…}
+]
+
+```
+
+
 # License
 
 This project is licensed under the MIT License.

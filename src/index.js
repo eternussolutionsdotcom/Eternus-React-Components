@@ -5,8 +5,8 @@ export {DropdownComponent as Dropdown};
 import ExportToExcel from "./components/ExportToExcel/ExportToExcel";
 export { ExportToExcel };
 
-import fileupload from "./components/FileUpload/FileUpload";
-export { fileupload as Fileupload };
+import FileUpload from "./components/FileUpload/FileUpload";
+export { FileUpload };
 
 import Login from "./components/Login/Login";
 export { Login };
