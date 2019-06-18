@@ -10,9 +10,27 @@
 
 ul {
     list-style-type: none;
+    padding-left: 0px;
     }
 
 li a{ color: black; }
 
 #uploadBtn{ float: right; }
 
+.inputfile {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .inputfile + label * {
+    cursor: pointer;
+    pointer-events: none;  
+  }
+
+  label{
+    cursor: pointer;
+  }
