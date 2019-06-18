@@ -6,7 +6,7 @@ import ExportToExcel from "./components/ExportToExcel/ExportToExcel";
 export { ExportToExcel };
 
 import fileupload from "./components/FileUpload/FileUpload";
-export { fileupload as FileUpload };
+export { fileupload as Fileupload };
 
 import Login from "./components/Login/Login";
 export { Login };
