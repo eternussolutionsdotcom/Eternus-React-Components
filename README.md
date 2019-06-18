@@ -85,3 +85,68 @@ Common props you need to specify include:
 | Link  | String |   | href link associated with menu item |
 | icon  | String |   | Icon to be displayed along with menu item name |
 | disabled  | Boolean | false | Disable the menu item, making it unselectable |
+
+
+# Login
+
+**Usage**
+
+```js
+
+import {Login} from "eternus-react-components";
+
+export default class Sample extends Component {
+
+    onChangeComponent=(e) => {
+        ...
+    }
+
+    render() { 
+        return (
+            
+                <Login
+                    title="Login"
+                    usernameType="email"
+                    usernamePlaceholder="Username" 
+                    passwordPlaceholder="Password"
+                    buttonTitle="Sign In"
+                    onChange={this.onChangeComponent.bind(this)}
+                    position="Left"  
+                    usernameName="usernameValue"     
+                    passwordName="userPasswordValue"   
+                    usernameValue={this.state.usernameValue}
+                    userPasswordValue={this.state.userPasswordValue}
+                    error={false}
+                    errorMessage="Invalid username or password"    
+                />
+
+        )
+    }
+}
+
+```
+
+**Props**
+
+Common props you need to specify include:
+
+
+| **Props** | **Default** | **Type** | **Description** |
+| --- | --- | --- | --- |
+| variant             | success      | String ['primary', 'secondary' , 'success' ,'danger'  , 'warning' , 'info' , 'dark' , 'light'] | Color for sign in button                           |
+| passwordType        | password     | string[password]                                                                               | Input type for password field                      |
+| title               | Login        | string                                                                                         | Title for the login page                           |
+| usernameType        | text         | string[email,number,text]                                                                      | Input type for username field                      |
+| usernamePlaceholder | Username     | string                                                                                         | Placeholder for username field                     |
+| passwordPlaceholder | Password     | string                                                                                         | Placeholder for password field                     |
+| buttonTitle         | Sign In      | string                                                                                         | Text for sign in button                            |
+| onChange            |              | function                                                                                       | onChange handler for username and password fields  |
+| position            | center       | string[center,left]                                                                            | Position for login page title                      |
+| usernameName        | username     | string                                                                                         | Input name for username field                      |
+| passwordName        | password     | string                                                                                         | Input name for password field                      |
+| usernameValue       | Empty String | string                                                                                         | Value for username field                           |
+| userPasswordValue   | Empty String | string                                                                                         | Value for password field                           |
+| forgotPasswordLink  |              | string                                                                                         | Redirect link for forgot password                  |
+| signUpLink          |              | string                                                                                         | Redirect link for sign up                          |
+| error               | false        | Boolean                                                                                        | Trigger error                                      |
+| errorMessage        | Empty String | string                                                                                         | Error message to be displayed                      |                         |
