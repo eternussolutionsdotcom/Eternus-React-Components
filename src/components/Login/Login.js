@@ -47,12 +47,12 @@ const Login = props => {
                                 onChange={onChange}
                                 value={props.usernameValue}
                             />
-                        </InputGroup>
                         {
                             loginData.usernameRequired ? <FormControl.Feedback className="showError error" type="invalid">
                                 Please enter username
                     </FormControl.Feedback> : null
                         }
+                        </InputGroup>
                         <InputGroup className="mb-3 form-group required">
                             <InputGroup.Prepend>
                             </InputGroup.Prepend>
@@ -65,13 +65,13 @@ const Login = props => {
                                 onChange={onChange}
                                 value={props.userPasswordValue}
                             />
-                        </InputGroup>
+                      
                         {
                             loginData.passwordRequired ? <FormControl.Feedback className="showError error" type="invalid">
                                 Please enter password
                             </FormControl.Feedback> : null
                         }
-
+  </InputGroup>
                         <InputGroup className="mb-3">
                             <Button variant="success" id="signUp" type="submit" className="ButtonClass" onClick={() => onSubmit()} >{props.buttonTitle}</Button>
 
@@ -113,6 +113,7 @@ Login.propTypes = {
     userPasswordValue: PropTypes.string,
     forgotPasswordLink: PropTypes.string,
     signUpLink: PropTypes.string,
+    onSubmit : PropTypes.func.isRequired
 
 }
 

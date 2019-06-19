@@ -67,8 +67,6 @@ li a{ color: black; }
     }
 
   .error{
-    text-emphasis: bold;
+    
     font-size: 12px;
-    margin-top: -5%;
-    margin-bottom: 5%;
   }
