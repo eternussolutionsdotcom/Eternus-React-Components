@@ -154,6 +154,7 @@ Common props you need to specify include:
 | signUpLink          |              | String                                                                                         | Redirect link for sign up                          |
 | error               | false        | Boolean                                                                                        | Trigger error                                      |
 | errorMessage        | Empty String | string                                                                                         | Error message to be displayed                      |                         |
+| onSubmit            |              | Function                                                                                       | Callback function to submit the login credentials  |
 
 
 # File Upload
@@ -217,9 +218,56 @@ Common props you need to specify include:
 
 ```
 
+# Export to excel
+
+**Usage**
+
+```js
+import {ExportToExcel} from "eternus-react-component";
+
+export default class Sample extends Component {
+
+   render() {
+        const data= [
+            {id : 1, name: 'name1', gender: 'female'},
+            {id : 2, name: 'name2', gender: 'female'},
+            {id : 3, name: 'name3', gender: 'male'},
+            {id : 4, name: 'name4', gender: 'female'},
+            {id : 5, name: 'name5', gender: 'male'},
+        ]
+        return (
+            <div>
+                <ExportToExcel 
+                    variant="success" 
+                    title="Export to excel" 
+                    data={data} 
+                    fileName="dataFile" 
+                    sheetName="sheet1"/>
+            </div>
+        )
+    }
+}
+}
+
+```
+
+**Props**
+
+Common props you need to specify include:
+
+| **Props** | **Default** | **Type** | **Description** |
+| --- | --- | --- | --- |
+| title | Dropdown | String | Title for the export button  |
+| variant | info | String ['primary', 'secondary', 'success','danger', 'warning' , 'info' , 'dark' , 'light']  | Color for the button  |
+| data  |   | Array of objects [JSON] | Json data to export to the excel file  |
+| fileName  | excel | String | File name for excel file  |
+| sheetName  | sheet1 | String | Sheet name for the data sheet |
+| extension  | xlsx | String ['xlsx', 'csv', 'tsv'] | File extension for export file |
+
+
+
 
 # License
 
 This project is licensed under the MIT License.
-| errorMessage        | Empty String | String                                                                                         | Error message to be displayed                      |
-| onSubmit            |              | Function                                                                                       | Callback function to submit the login credentials  |
+
