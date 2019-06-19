@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Card, Button, FormControl } from "react-bootstrap";
-import $ from 'jquery';
 import PropTypes from 'prop-types'
 
 export default class FileUpload extends Component {
@@ -25,40 +24,46 @@ export default class FileUpload extends Component {
 
   uploadFile = () => {
     this.setState({ status: "" });
+    let filesLength = this.state.files.length;
 
-    var Count = 0;
-    this.state.files.forEach((file) => {
-      if (file.size > this.props.size * 1000) {
-        Count++;
-        this.setState({ status: "File size must under " + this.props.size + "KB." });
-      }
-    });
+    if (filesLength == 0) {
+      this.setState({ status: "No file selected.", files: [] });
+    } else {
+      var Count = 0;
+      this.state.files.forEach((file) => {
+        if (file.size > this.props.size * 1000) {
+          Count++;
+          this.setState({ status: "File size must under " + this.props.size + "KB." });
+        }
+      });
 
-    if (Count == 0) {
-      if (this.props.accept !== "") {
+      if (Count == 0) {
+        if (this.props.accept !== "") {
 
-        let acceptExtension = [];
-        let fileType = this.props.accept.split(",");
-        fileType.forEach((fileType) => {
-          acceptExtension.push(fileType.replace(".", ""));
-        });
-        let invalidFiles = [];
+          let acceptExtension = [];
+          let fileType = this.props.accept.split(",");
+          fileType.forEach((fileType) => {
+            acceptExtension.push(fileType.replace(".", ""));
+          });
+          let invalidFiles = [];
 
-        this.state.files.forEach((file) => {
-          fileType = file.name.split(".");
-          if ($.inArray(fileType[1], acceptExtension) == -1) {
-            invalidFiles.push(" " + file.name.substring(file.name.indexOf(".")));
+          this.state.files.forEach((file) => {
+            fileType = file.name.split(".");
+            if (acceptExtension.indexOf(fileType[1]) < 1) {
+              invalidFiles.push(" " + fileType[1]);
+            }
+          });
+
+          if (invalidFiles.length > 0) {
+            this.setState({ status: "Invalid file extension " + invalidFiles });
+          } else if (filesLength > 0) {
+            this.props.fileResponse(this.state.files);
+            this.setState({ status: "Your files are uploaded successfully.", files: [] });
           }
-        });
-        if (invalidFiles.length > 0) {
-          this.setState({ status: "Invalid file extension " + invalidFiles });
-        } else if (this.state.files.length > 0) {
+        } else if (filesLength > 0) {
           this.props.fileResponse(this.state.files);
           this.setState({ status: "Your files are uploaded successfully.", files: [] });
         }
-      } else if (this.state.files.length > 0) {
-        this.props.fileResponse(this.state.files);
-        this.setState({ status: "Your files are uploaded successfully.", files: [] });
       }
     }
   }
@@ -86,7 +91,7 @@ export default class FileUpload extends Component {
           <Card>
             <Card.Header>
               <div className="row">
-                <div className="col-12">
+                <div className="col-12" style={{ paddingLeft: '0px' }}>
                   <FormControl
                     id="fileInput"
                     type="file"
@@ -140,7 +145,7 @@ FileUpload.propTypes = {
   size: PropTypes.number,
   multiple: PropTypes.bool,
   variant: PropTypes.string.isRequired,
-  fileResponse : PropTypes.func.isRequired
+  fileResponse: PropTypes.func.isRequired
 }
 
 FileUpload.defaultProps = {

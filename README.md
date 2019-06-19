@@ -150,7 +150,7 @@ Common props you need to specify include:
 | errorMessage        | Empty String | string                                                                                         | Error message to be displayed                      |                         |
 
 
-# Fileupload
+# File Upload
 
 **Usage**
 
@@ -189,7 +189,7 @@ Common props you need to specify include:
 | browseButtonTitle | Browse | String | Title for the Browse Button  |
 | uploadButtonTitle | Upload | String | Title for the Upload Button  |
 | accept | Empty String | String ".xls,.xlsx,.txt"  | Allows the user to restrict file extensions  |
-| size |  Number | Number | Allows the user to restrict file size  |
+| size |  Number | Number | Allows the user to restrict file size.File size should be in KB  |
 | multiple | false | Boolean | Define single or multiple file selection criteria  |
 | variant | success | String ['primary', 'secondary' , 'success' ,'danger' , 'warning' , 'info' , 'dark' , 'light'] | Color for the Browse and Upload Button  |
 | fileResponse |   | Function | Callback function to recieve uploaded files |

@@ -12,7 +12,7 @@ export default class FileUploadComponent extends Component {
                 browseButtonTitle = "Browse"
                 uploadButtonTitle = "Upload"
                 accept = ".xls,.xlsx,.txt"
-                size = {1000}
+                size = {1}
                 multiple = {true}
                 variant = "success"
                 fileResponse = {this.getFiles}
