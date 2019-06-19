@@ -19,6 +19,7 @@ React components inspired by react-bootstrap.
 $npm install eternus-react-component
 ```
 
+
 # Dropdown
 
 **Usage**
@@ -87,6 +88,7 @@ Common props you need to specify include:
 | disabled  | Boolean | false | Disable the menu item, making it unselectable |
 
 
+
 # Login
 
 **Usage**
@@ -132,26 +134,29 @@ export default class Sample extends Component {
 **Props**
 
 Common props you need to specify include:
+
 | **Props** | **Default** | **Type** | **Description** |
 | --- | --- | --- | --- |
 | title | Login | String | Title for the login page |
-| variant | info | String ['primary', 'secondary', 'success', 'danger', 'warning' , 'info' , 'dark' , 'light']  | Color for sign in button                           |
-| usernameType         | text | String [email, number, text] | Input type for username field |
-| passwordType         | password     | String [password]                                                                               | Input type for password field |
-| usernamePlaceholder | Username     | String                                                                                         | Placeholder for username field |
-| passwordPlaceholder | Password     | String         | Placeholder for password field |
-| buttonTitle         | Sign In | String                                                                                         | Text for sign in button |
-| onChange             |   | Function                                                                                       | onChange handler for username and password fields |
-| position             | center       | String[center,left]                                                                             | Position for login page title |
-| username       | username     | String                                                                                         | Input name for username field |
-| passwordName         | password     | String                                                                                         | Input name for password field |
-| usernameValue       | Empty String | String                                                                                         | Value for username field   |
-| userPasswordValue   | Empty String | String                                                                                         | | Value for password field |
-| forgotPasswordLink   |   | String                                                                                         | Redirect link for forgot password |
-| signUpLink           |   | String                                                                                         | Redirect link for sign up |
-| error               | false         | Boolean                                                                                         | Trigger error |
-| errorMessage         | Empty String | String                                                                                         | Error message to be displayed |
-| onSubmit             |   | Function                                                                                       | Callback function to submit the login credentials |
+| variant | info | String [&#39;primary&#39;, &#39;secondary&#39;, &#39;success&#39;, &#39;danger&#39;, &#39;warning&#39; , &#39;info&#39; , &#39;dark&#39; , &#39;light&#39;] | Color for sign in button                   |
+| usernameType | text | String [email, number, text] | Input type for username field |
+| passwordType | password | String [password] | Input type for password field |
+| usernamePlaceholder | Username | String                                               | Placeholder for username field |
+| passwordPlaceholder | Password | String | Placeholder for password field |
+| buttonTitle | Sign In | String | Text for sign in button |
+| onChange |   | Function | onChange handler for username and password fields |
+| position | center | String[center,left] | Position for login page title |
+| username | username | String | Input name for username field |
+| passwordName | password | String | Input name for password field |
+| usernameValue | Empty String | String | Value for username field   |
+| userPasswordValue | Empty String | String | | Value for password field |
+| forgotPasswordLink |   | String | Redirect link for forgot password |
+| signUpLink |   | String | Redirect link for sign up |
+| error | false | Boolean | Trigger error |
+| errorMessage | Empty String | String | Error message to be displayed |
+| onSubmit |   | Function | Callback function to submit the login credentials |
+
+
 
 # File Upload
 
@@ -214,6 +219,8 @@ Common props you need to specify include:
 
 ```
 
+
+
 # Export to excel
 
 **Usage**
@@ -259,7 +266,6 @@ Common props you need to specify include:
 | fileName  | excel | String | File name for excel file  |
 | sheetName  | sheet1 | String | Sheet name for the data sheet |
 | extension  | xlsx | String ['xlsx', 'csv', 'tsv'] | File extension for export file |
-
 
 
 
