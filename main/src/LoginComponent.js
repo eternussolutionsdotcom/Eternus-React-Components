@@ -6,7 +6,6 @@ export default class LoginComponent extends Component {
         super(props);
 
         this.state = {
-           
             usernameValue:'',
             userPasswordValue:''            
         };
@@ -16,7 +15,9 @@ export default class LoginComponent extends Component {
         this.setState({[e.target.name]: e.target.value});
        }
 
-
+       onSubmit = () => {
+           console.log("submit")
+       }
     render() { 
         return (
             <Row>
@@ -36,8 +37,9 @@ export default class LoginComponent extends Component {
                     userPasswordValue={this.state.userPasswordValue} 
                     forgotPasswordLink="#"  
                     signUpLink="#" 
-                    error={true}
-                    errorMessage=""
+                    error={false}
+                    errorMessage="Username or password is wrong"
+                    onSubmit= {this.onSubmit}
                 />
                 </Col>
                 <Col xs={12} md='4'></Col>

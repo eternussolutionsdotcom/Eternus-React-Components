@@ -101,6 +101,10 @@ export default class Sample extends Component {
         ...
     }
 
+    onSubmit =()=>{
+        ...
+    }
+
     render() { 
         return (
                 <Login
@@ -116,7 +120,8 @@ export default class Sample extends Component {
                     usernameValue={this.state.usernameValue}
                     userPasswordValue={this.state.userPasswordValue}
                     error={false}
-                    errorMessage="Invalid username or password"    
+                    errorMessage="Invalid username or password"  
+                    onSubmit= {this.onSubmit}  
                 />
         )
     }
@@ -131,87 +136,22 @@ Common props you need to specify include:
 
 | **Props** | **Default** | **Type** | **Description** |
 | --- | --- | --- | --- |
+
 | variant             | success      | String ['primary', 'secondary' , 'success' ,'danger'  , 'warning' , 'info' , 'dark' , 'light'] | Color for sign in button                           |
-| passwordType        | password     | string[password]                                                                               | Input type for password field                      |
-| title               | Login        | string                                                                                         | Title for the login page                           |
-| usernameType        | text         | string[email,number,text]                                                                      | Input type for username field                      |
-| usernamePlaceholder | Username     | string                                                                                         | Placeholder for username field                     |
-| passwordPlaceholder | Password     | string                                                                                         | Placeholder for password field                     |
-| buttonTitle         | Sign In      | string                                                                                         | Text for sign in button                            |
-| onChange            |              | function                                                                                       | onChange handler for username and password fields  |
-| position            | center       | string[center,left]                                                                            | Position for login page title                      |
-| usernameName        | username     | string                                                                                         | Input name for username field                      |
-| passwordName        | password     | string                                                                                         | Input name for password field                      |
-| usernameValue       | Empty String | string                                                                                         | Value for username field                           |
-| userPasswordValue   | Empty String | string                                                                                         | Value for password field                           |
-| forgotPasswordLink  |              | string                                                                                         | Redirect link for forgot password                  |
-| signUpLink          |              | string                                                                                         | Redirect link for sign up                          |
+| passwordType        | password     | String[password]                                                                               | Input type for password field                      |
+| title               | Login        | String                                                                                         | Title for the login page                           |
+| usernameType        | text         | String[email,number,text]                                                                      | Input type for username field                      |
+| usernamePlaceholder | Username     | String                                                                                         | Placeholder for username field                     |
+| passwordPlaceholder | Password     | String                                                                                         | Placeholder for password field                     |
+| buttonTitle         | Sign In      | String                                                                                         | Text for sign in button                            |
+| onChange            |              | Function                                                                                       | onChange handler for username and password fields  |
+| position            | center       | String[center,left]                                                                            | Position for login page title                      |
+| usernameName        | username     | String                                                                                         | Input name for username field                      |
+| passwordName        | password     | String                                                                                         | Input name for password field                      |
+| usernameValue       | Empty String | String                                                                                         | Value for username field                           |
+| userPasswordValue   | Empty String | String                                                                                         | Value for password field                           |
+| forgotPasswordLink  |              | String                                                                                         | Redirect link for forgot password                  |
+| signUpLink          |              | String                                                                                         | Redirect link for sign up                          |
 | error               | false        | Boolean                                                                                        | Trigger error                                      |
-| errorMessage        | Empty String | string                                                                                         | Error message to be displayed                      |                         |
-
-
-# Fileupload
-
-**Usage**
-
-```js
-import {FileUpload} from "eternus-react-component";
-
-export default class Sample extends Component {
-
-   getFiles = (files) => {
-        //console.log("files",files)
-    }
-  render() {
- 
-        return (  
-				<FileUpload  
-					browseButtonTitle = "Browse"
-					uploadButtonTitle = "Upload"
-					accept = ".xls,.xlsx,.txt"
-					size = {1}
-					multiple = {true}
-                    variant = "success"
-                    fileResponse = {this.getFiles}
-				/> 
-        )
-    }
-}
-
-```
-
-**Props**
-
-Common props you need to specify include:
-
-| **Props** | **Default** | **Type** | **Description** |
-| --- | --- | --- | --- |
-| browseButtonTitle | Browse | String | Title for the Browse Button  |
-| uploadButtonTitle | Upload | String | Title for the Upload Button  |
-| accept | Empty String | String ".xls,.xlsx,.txt"  | Allows the user to restrict file extensions  |
-| size |  Number | Number | Allows the user to restrict file size  |
-| multiple | false | Boolean | Define single or multiple file selection criteria  |
-| variant | success | String ['primary', 'secondary' , 'success' ,'danger' , 'warning' , 'info' , 'dark' , 'light'] | Color for the Browse and Upload Button  |
-| fileResponse |   | Function | Callback function to recieve uploaded files |
-
-
-
-**File response array structure after upload**
-
-```js
-[
-	{
-        name: "fileName.txt",
-        lastModified: 1560493560484,
-        lastModifiedDate: Fri Jun 14 2019 11:56:00 GMT+0530 (India Standard Time),
-        webkitRelativePath: "",
-        size: 967
-    }
-]
-
-```
-
-
-# License
-
-This project is licensed under the MIT License.
+| errorMessage        | Empty String | String                                                                                         | Error message to be displayed                      |
+| onSubmit            |              | Function                                                                                       | Callback function to submit the login credentials  |
