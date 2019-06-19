@@ -153,7 +153,6 @@ Common props you need to specify include:
 | forgotPasswordLink  |              | String                                                                                         | Redirect link for forgot password                  |
 | signUpLink          |              | String                                                                                         | Redirect link for sign up                          |
 | error               | false        | Boolean                                                                                        | Trigger error                                      |
-<<<<<<< HEAD
 | errorMessage        | Empty String | string                                                                                         | Error message to be displayed                      |                         |
 
 
@@ -196,7 +195,7 @@ Common props you need to specify include:
 | browseButtonTitle | Browse | String | Title for the Browse Button  |
 | uploadButtonTitle | Upload | String | Title for the Upload Button  |
 | accept | Empty String | String ".xls,.xlsx,.txt"  | Allows the user to restrict file extensions  |
-| size |  Number | Number | Allows the user to restrict file size.File size should be in KB  |
+| size |  Number | Number | Allows the user to restrict file size. File size should be in KB  |
 | multiple | false | Boolean | Define single or multiple file selection criteria  |
 | variant | success | String ['primary', 'secondary' , 'success' ,'danger' , 'warning' , 'info' , 'dark' , 'light'] | Color for the Browse and Upload Button  |
 | fileResponse |   | Function | Callback function to recieve uploaded files |
@@ -222,7 +221,5 @@ Common props you need to specify include:
 # License
 
 This project is licensed under the MIT License.
-=======
 | errorMessage        | Empty String | String                                                                                         | Error message to be displayed                      |
 | onSubmit            |              | Function                                                                                       | Callback function to submit the login credentials  |
->>>>>>> 99785dddb516251aabac0b7851c3db64d602e944
