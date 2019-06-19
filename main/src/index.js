@@ -3,6 +3,7 @@ import { render} from 'react-dom';
 import DropdownComponent from "./DropdownComponent";
 import FileUploadComponent from "./FileUploadComponent";
 import LoginComponent from "./LoginComponent";
+import MenuComponent from "./MenuComponent"
 import {ExportToExcel, Dropdown,Login,Table,Menu,FileUpload} from "../../src";
 
 //You can experiment your developed components
@@ -10,9 +11,11 @@ import {ExportToExcel, Dropdown,Login,Table,Menu,FileUpload} from "../../src";
 
 const App = () => (
 <>
-     <DropdownComponent/>
+     {/* <DropdownComponent/>
        <FileUploadComponent/>
-     <LoginComponent/>
+       <MenuComponent/>
+    */}
+      <LoginComponent/> 
      </>
   
 );
