@@ -9,9 +9,11 @@ import {ExportToExcel, Dropdown,Login,Table,Menu,FileUpload} from "../../src";
 // using them here and run the command # npm start
 
 const App = () => (
-     // <DropdownComponent/>
-     //  <FileUploadComponent/>
+<>
+     <DropdownComponent/>
+       <FileUploadComponent/>
      <LoginComponent/>
+     </>
   
 );
 render(<App />, document.getElementById("root"));

@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
-import {Fileupload} from '../../src';
+import {FileUpload} from '../../src';
 
 export default class FileUploadComponent extends Component {
-     getFile = (e) => {
-        console.log("e",e);
-        }
+    getFiles = (files) => {
+        //console.log("files",files)
+    }
     render() {
 
         return (
-            <Fileupload  
-                title1 = "Browse"
-                title2 = "Upload"
+            <FileUpload  
+                browseButtonTitle = "Browse"
+                uploadButtonTitle = "Upload"
                 accept = ".xls,.xlsx,.txt"
                 size = {1000}
-                multiple = "multiple"
-                variant = "success btn-sm"
+                multiple = {true}
+                variant = "success"
+                fileResponse = {this.getFiles}
             />    
         )
     }

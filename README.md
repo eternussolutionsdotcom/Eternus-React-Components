@@ -16,7 +16,7 @@ React components inspired by react-bootstrap.
 # Install
 
 ``` bash
-$npm install eternus-react-components
+$npm install eternus-react-component
 ```
 
 # Dropdown
@@ -24,7 +24,7 @@ $npm install eternus-react-components
 **Usage**
 
 ```js
-import {Dropdown} from "eternus-react-components";
+import {Dropdown} from "eternus-react-component";
 
 export default class Sample extends Component {
 
@@ -93,7 +93,7 @@ Common props you need to specify include:
 
 ```js
 
-import {Login} from "eternus-react-components";
+import {Login} from "eternus-react-component";
 
 export default class Sample extends Component {
 
@@ -107,7 +107,6 @@ export default class Sample extends Component {
 
     render() { 
         return (
-            
                 <Login
                     title="Login"
                     usernameType="email"
@@ -124,7 +123,6 @@ export default class Sample extends Component {
                     errorMessage="Invalid username or password"  
                     onSubmit= {this.onSubmit}  
                 />
-
         )
     }
 }
