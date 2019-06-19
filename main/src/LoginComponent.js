@@ -16,7 +16,7 @@ export default class LoginComponent extends Component {
        }
 
        onSubmit = () => {
-           console.log("submit")
+           //console.log("submit")
        }
     render() { 
         return (

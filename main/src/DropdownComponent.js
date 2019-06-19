@@ -4,7 +4,7 @@ import {Dropdown} from '../../src';
 export default class DropdownComponent extends Component {
 
 optionClicked = () => {
-        console.log("Hello I am clicked");
+        //console.log("Hello I am clicked");
     };
 
     render() {
