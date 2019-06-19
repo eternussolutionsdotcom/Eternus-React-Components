@@ -11,7 +11,7 @@ import {ExportToExcel, Dropdown,Login,Table,Menu,FileUpload} from "../../src";
 const App = () => (
 <>
      <DropdownComponent/>
-       <FileUploadComponent/>
+     <FileUploadComponent/>
      <LoginComponent/>
      </>
   
