@@ -153,5 +153,73 @@ Common props you need to specify include:
 | forgotPasswordLink  |              | String                                                                                         | Redirect link for forgot password                  |
 | signUpLink          |              | String                                                                                         | Redirect link for sign up                          |
 | error               | false        | Boolean                                                                                        | Trigger error                                      |
+| errorMessage        | Empty String | string                                                                                         | Error message to be displayed                      |                         |
+
+
+# File Upload
+
+**Usage**
+
+```js
+import {FileUpload} from "eternus-react-component";
+
+export default class Sample extends Component {
+
+   getFiles = (files) => {
+        //console.log("files",files)
+    }
+  render() {
+ 
+        return (  
+				<FileUpload  
+					browseButtonTitle = "Browse"
+					uploadButtonTitle = "Upload"
+					accept = ".xls,.xlsx,.txt"
+					size = {1}
+					multiple = {true}
+                    variant = "success"
+                    fileResponse = {this.getFiles}
+				/> 
+        )
+    }
+}
+
+```
+
+**Props**
+
+Common props you need to specify include:
+
+| **Props** | **Default** | **Type** | **Description** |
+| --- | --- | --- | --- |
+| browseButtonTitle | Browse | String | Title for the Browse Button  |
+| uploadButtonTitle | Upload | String | Title for the Upload Button  |
+| accept | Empty String | String ".xls,.xlsx,.txt"  | Allows the user to restrict file extensions  |
+| size |  Number | Number | Allows the user to restrict file size. File size should be in KB  |
+| multiple | false | Boolean | Define single or multiple file selection criteria  |
+| variant | success | String ['primary', 'secondary' , 'success' ,'danger' , 'warning' , 'info' , 'dark' , 'light'] | Color for the Browse and Upload Button  |
+| fileResponse |   | Function | Callback function to recieve uploaded files |
+
+
+
+**File response array structure after upload**
+
+```js
+[
+	{
+        name: "fileName.txt",
+        lastModified: 1560493560484,
+        lastModifiedDate: Fri Jun 14 2019 11:56:00 GMT+0530 (India Standard Time),
+        webkitRelativePath: "",
+        size: 967
+    }
+]
+
+```
+
+
+# License
+
+This project is licensed under the MIT License.
 | errorMessage        | Empty String | String                                                                                         | Error message to be displayed                      |
 | onSubmit            |              | Function                                                                                       | Callback function to submit the login credentials  |
