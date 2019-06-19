@@ -7,8 +7,7 @@ import XLSX from "xlsx";
 
 const ExportToExcel = props => {
 
-        const exportToExcel = (e) => {
-            e.preventDefault();
+        const exportToExcel = () => {
             let fileName = props.fileName + '.' + props.extension;
             let worksheet = XLSX.utils.json_to_sheet(props.data);
             let workbook = XLSX.utils.book_new();
@@ -16,12 +15,12 @@ const ExportToExcel = props => {
             XLSX.writeFile(workbook, fileName);
         }
 
-        return <Button 
-                    variant="info" 
-                    onClick={(e) => exportToExcel(e)}
-                >
+        return (<Button 
+                    id="exportButton"
+                    variant={props.variant} 
+                    onClick={(e) => exportToExcel(e)} >
                 <i className="fa fa-upload"></i> {props.title}
-                </Button>
+                </Button>)
     
 }
 ExportToExcel.propTypes = {
