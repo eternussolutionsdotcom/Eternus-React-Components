@@ -149,7 +149,7 @@ Common props you need to specify include:
 | username | username | String | Input name for username field |
 | passwordName | password | String | Input name for password field |
 | usernameValue | Empty String | String | Value for username field   |
-| userPasswordValue | Empty String | String | | Value for password field |
+| userPasswordValue | Empty String | String | Value for password field |
 | forgotPasswordLink |   | String | Redirect link for forgot password |
 | signUpLink |   | String | Redirect link for sign up |
 | error | false | Boolean | Trigger error |
