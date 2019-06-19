@@ -146,7 +146,7 @@ Common props you need to specify include:
 | buttonTitle         | Sign In      | String                                                                                         | Text for sign in button                            |
 | onChange            |              | Function                                                                                       | onChange handler for username and password fields  |
 | position            | center       | String[center,left]                                                                            | Position for login page title                      |
-| usernameName        | username     | String                                                                                         | Input name for username field                      |
+| username       | username     | String                                                                                         | Input name for username field                      |
 | passwordName        | password     | String                                                                                         | Input name for password field                      |
 | usernameValue       | Empty String | String                                                                                         | Value for username field                           |
 | userPasswordValue   | Empty String | String                                                                                         | Value for password field                           |
