@@ -40,7 +40,7 @@ const Login = props => {
                             </InputGroup.Prepend>
                             <FormControl
                                 id="usernameId"
-                                name={props.usernameName}
+                                name={props.username}
                                 type={props.usernameType}
                                 placeholder={props.usernamePlaceholder}
                                 aria-describedby="basic-addon1"
@@ -107,7 +107,7 @@ Login.propTypes = {
     buttonTitle: PropTypes.string,
     onChange: PropTypes.func,
     position: PropTypes.string,
-    usernameName: PropTypes.string,
+    username: PropTypes.string,
     passwordName: PropTypes.string,
     usernameValue: PropTypes.string,
     userPasswordValue: PropTypes.string,
@@ -128,7 +128,7 @@ Login.defaultProps = {
     passwordPlaceholder: "Password",
     buttonTitle: "Sign In",
     position: "center",
-    usernameName: "username",
+    username: "username",
     passwordName: "password",
     usernameValue: "",
     userPasswordValue: "",
