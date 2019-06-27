@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Menu} from '../../src';
-import eternus from '../../src/components/Menu/eternus.png';
+//import eternus from '../../src/components/Menu/eternus.png';
 import profile from '../../src/components/Menu/profile.png'
 
 export default class MenuComponent extends Component {
@@ -10,7 +10,7 @@ export default class MenuComponent extends Component {
         const Menuoptions =  [
             {
                 name: "Dashboard",
-                url: "/",
+                url: "/aaa",
                 icon: "fa fa-dashcube"
             },
             {
@@ -22,6 +22,7 @@ export default class MenuComponent extends Component {
             name: "Home",
             url: "/",
             icon: "fa fa-dashcube",
+            rootParent:true,
             children: [
                 {
                     name: "Link1",
@@ -34,7 +35,7 @@ export default class MenuComponent extends Component {
                     icon: "fa fa-dashcube",
                     children: [
                         {
-                            name: "sublink1",
+                            name: "Sublink1",
                             url: "/",
                             icon: "fa fa-dashcube",
                         },
@@ -70,6 +71,7 @@ export default class MenuComponent extends Component {
                 name: "Contact",
                 url: "/",
                 icon: "fa fa-dashcube",
+                rootParent:true,
                 children: [
                     {
                         name: "Email",
@@ -94,12 +96,12 @@ export default class MenuComponent extends Component {
 
         return (
             <Menu
-            Menuoptions={Menuoptions}
-            brandName="Brandname"
-            logoUrl = {eternus}
-            profileOptions={profileOptions}
-            profileUrl={profile}
-            searchOption={true}
+                Menuoptions={Menuoptions}
+                brandName="Brandname"
+                //logoUrl = {eternus}
+                profileOptions={profileOptions}
+                profileUrl={profile}
+                searchOption={true}
             ></Menu>
         )
     }

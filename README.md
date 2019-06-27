@@ -138,7 +138,7 @@ Common props you need to specify include:
 | **Props** | **Default** | **Type** | **Description** |
 | --- | --- | --- | --- |
 | title | Login | String | Title for the login page |
-| variant | info | String [&#39;primary&#39;, &#39;secondary&#39;, &#39;success&#39;, &#39;danger&#39;, &#39;warning&#39; , &#39;info&#39; , &#39;dark&#39; , &#39;light&#39;] | Color for sign in button                   |
+| variant | info | String ['primary', 'secondary', 'success', 'danger', 'warning' , 'info' , 'dark' , 'light'] | Color for sign in button                   |
 | usernameType | text | String [email, number, text] | Input type for username field |
 | passwordType | password | String [password] | Input type for password field |
 | usernamePlaceholder | Username | String                                               | Placeholder for username field |
@@ -267,6 +267,71 @@ Common props you need to specify include:
 | sheetName  | sheet1 | String | Sheet name for the data sheet |
 | extension  | xlsx | String ['xlsx', 'csv', 'tsv'] | File extension for export file |
 
+
+
+# Modal Component
+
+**Usage**
+
+```js
+import {Modal} from "eternus-react-component";
+
+export default class Sample extends Component {
+     
+    this.state = {
+            show: false
+        }
+
+    handleClose = () => {
+        this.setState({
+            show: !this.state.show
+        });
+    }
+
+    handleShow = () => {
+        this.setState({
+            show: true
+        });
+    }
+
+   render() {
+        return (
+            <div>
+                <Modal
+                        size="md"
+                        variant="#FFCC00"
+                        modalType="confirm"
+                        show={this.state.show} 
+                        handleClose={this.handleClose}
+                        handleConfirm={this.handleShow}
+                        modalHeading="Modal Heading"
+                        modalMessage ="Modal Message"
+                        confirmButtonText = "Save data"
+                        cancelButtonText = "Ok"
+                    />
+            </div>
+        )
+    }
+}
+
+```
+
+**Props**
+
+Common props you need to specify include:
+
+| **Props** | **Default** | **Type** | **Description** |
+| --- | --- | --- | --- |
+| variant |   | String [Any color code] | Color for modal heading background                   |
+| modalType | 'message' | String ['message' | 'confirm'] | Modal type for displaying message modal or a confirmation modal |
+| show | false | Boolean | Show and hide the modal using this attribute |
+| handleClose |   | Function | Callback function for cancel button |
+| handleConfirm |   | Function | Callback function for confirm button |
+| modalHeading |   | String | Modal heading text to be displayed |
+| modalMessage |   | String | Modal message to be displayed |
+| cancelButtonText | 'Cancel' | String | Text for cancel button |
+| confirmButtonText | 'Confirm' | String | Text for confirm button |
+| size  | 'md' | String['sm','md','lg'] | Size of modal |
 
 
 # License

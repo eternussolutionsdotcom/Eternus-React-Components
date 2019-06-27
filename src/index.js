@@ -14,8 +14,8 @@ export { Login };
 import Menu from "./components/Menu/Menu";
 export { Menu };
 
-import Table from "./components/Table/Table";
-export { Table };
+import ModalComponent from "./components/Modal/Modal";
+export { ModalComponent as Modal };
 
 //CSS
 import 'bootstrap/dist/css/bootstrap.min.css';

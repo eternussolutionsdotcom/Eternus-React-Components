@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Button, FormControl } from "react-bootstrap";
+import { Card, Button, FormControl,Col ,Row} from "react-bootstrap";
 import PropTypes from 'prop-types'
 
 export default class FileUpload extends Component {
@@ -33,7 +33,7 @@ export default class FileUpload extends Component {
       this.state.files.forEach((file) => {
         if (file.size > this.props.size * 1000) {
           Count++;
-          this.setState({ status: "File size must under " + this.props.size + "KB." });
+          this.setState({ status: "File size must be under " + this.props.size + "KB." });
         }
       });
 
@@ -73,9 +73,11 @@ export default class FileUpload extends Component {
     const fileItems = this.state.files.map((file, index) =>
       <li key={index} title={file.name}>
         {file.name}{' '}
-        [{file.size / 1000}KB]
-        {' '} <a href="#" onClick={() => this.deleteFile(index)} title={'Remove ' + file.name}>
-          <i className="fa fa-times" aria-hidden="true"></i></a>
+        [{file.size / 1000} KB]
+        {' '} 
+        {/* <a href="#" onClick={() => this.deleteFile(index)} title={'Remove ' + file.name}> */}
+          <i className="fa fa-times" aria-hidden="true" title={'Remove ' + file.name} onClick={() => this.deleteFile(index)}></i>
+          {/* </a> */}
       </li>
     );
 
@@ -86,12 +88,12 @@ export default class FileUpload extends Component {
     let acceptedExtTypes = this.props.accept.split('.').join(' ');
     return (
 
-      <div className="container">
-        <div className="row">
+       <div className="container" >
+        <Row className="base-padding">
           <Card>
             <Card.Header>
-              <div className="row">
-                <div className="col-12" style={{ paddingLeft: '0px' }}>
+              <Row>
+                <Col xs="12" style={{ paddingLeft: '0px' }}>
                   <FormControl
                     id="fileInput"
                     type="file"
@@ -109,31 +111,38 @@ export default class FileUpload extends Component {
                   <span>
                     &nbsp;{fileselected}
                   </span>
-                </div>
-              </div>
-              <div>
+                </Col>
+              </Row>
+              <Row>
                 {
-                  (this.props.accept.length > 0)
-                    ? <div>Please upload only {acceptedExtTypes} extention files.</div>
-                    : <div></div>
-                }</div>
+                  this.props.accept.length > 0
+                    ? <FormControl.Feedback className="showError" type="valid">Please upload only {acceptedExtTypes} extention files.</FormControl.Feedback>
+                    : null
+                }
+                </Row>
             </Card.Header>
             <Card.Body>
-              <ul>{fileItems}</ul>
+              <Row>
+                    <ul >{fileItems}</ul>
+              </Row>
             </Card.Body>
             <Card.Footer>
-              <div className="row">
-                <div className="col-10" style={{ float: 'left' }}>{this.state.status}</div>
-                <div className="col-2">
+              <Row>
+                <Col xs="10" style={{ float: 'left' }}>
+                  <FormControl.Feedback className="showError" type="invalid">
+                    {this.state.status}
+                  </FormControl.Feedback>
+                </Col>
+                <Col xs="2">
                   <Button variant={this.props.variant + " btn-sm"} id="uploadBtn"
                     onClick={() => this.uploadFile()}>{this.props.uploadButtonTitle}
                   </Button>
-                </div>
-              </div>
+                </Col>
+              </Row>
             </Card.Footer>
           </Card>
-        </div>
-      </div>
+        </Row>
+       </div>
     )
   }
 }
