@@ -47,11 +47,11 @@ const Login = props => {
                                 onChange={onChange}
                                 value={props.usernameValue}
                             />
-                        {
-                            loginData.usernameRequired ? <FormControl.Feedback className="showError error" type="invalid">
-                                Please enter username
+                            {
+                                loginData.usernameRequired ? <FormControl.Feedback className="showError error" type="invalid">
+                                    Please enter username
                     </FormControl.Feedback> : null
-                        }
+                            }
                         </InputGroup>
                         <InputGroup className="mb-3 form-group required">
                             <InputGroup.Prepend>
@@ -65,13 +65,13 @@ const Login = props => {
                                 onChange={onChange}
                                 value={props.userPasswordValue}
                             />
-                      
-                        {
-                            loginData.passwordRequired ? <FormControl.Feedback className="showError error" type="invalid">
-                                Please enter password
+
+                            {
+                                loginData.passwordRequired ? <FormControl.Feedback className="showError error" type="invalid">
+                                    Please enter password
                             </FormControl.Feedback> : null
-                        }
-  </InputGroup>
+                            }
+                        </InputGroup>
                         <InputGroup className="mb-3">
                             <Button variant="success" id="signUp" type="submit" className="ButtonClass" onClick={() => onSubmit()} >{props.buttonTitle}</Button>
 
@@ -79,7 +79,7 @@ const Login = props => {
 
                         <a href={props.forgotPasswordLink} className="fontClass" >Forgot password?</a>
                         <span className="linkClass" >Don't have an account?<a href={props.signUpLink} > Sign Up</a></span>
-                        
+
                         <InputGroup className="mb-3">
                             {
                                 props.error ? <FormControl.Feedback className="showError" type="invalid">
@@ -113,7 +113,7 @@ Login.propTypes = {
     userPasswordValue: PropTypes.string,
     forgotPasswordLink: PropTypes.string,
     signUpLink: PropTypes.string,
-    onSubmit : PropTypes.func.isRequired
+    onSubmit: PropTypes.func.isRequired
 
 }
 

@@ -12,7 +12,15 @@ import ExportToExcelComponent from "./ExportToExcelComponent";
 const App = () => (
       <div>
           {/* Comment your component before commiting the changes */}
+    
+     {/* <DropdownComponent/>
+       <FileUploadComponent/>
+       <LoginComponent/> 
+       
+    */}
+      <MenuComponent/>
       </div>
+
   
 );
 render(<App />, document.getElementById("root"));

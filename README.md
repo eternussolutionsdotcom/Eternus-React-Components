@@ -117,7 +117,7 @@ export default class Sample extends Component {
                     buttonTitle="Sign In"
                     onChange={this.onChangeComponent.bind(this)}
                     position="Left"  
-                    usernameName="usernameValue"     
+                    username ="usernameValue"     
                     passwordName="userPasswordValue"   
                     usernameValue={this.state.usernameValue}
                     userPasswordValue={this.state.userPasswordValue}

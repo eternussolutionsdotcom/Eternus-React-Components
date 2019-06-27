@@ -14,7 +14,7 @@ optionClicked = () => {
             {optionName : "Action 3", onClick : this.optionClicked, Link : "#/action3", icon : 'fa fa-arrow-right'},
         ];
         return (
-                 <Dropdown />
+                 <Dropdown  />
         )
     }
 }
