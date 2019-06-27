@@ -323,7 +323,7 @@ Common props you need to specify include:
 | **Props** | **Default** | **Type** | **Description** |
 | --- | --- | --- | --- |
 | variant |   | String [Any color code] | Color for modal heading background                   |
-| modalType | 'message' | String ['message' | 'confirm'] | Modal type for displaying message modal or a confirmation modal |
+| modalType | 'message' | String ['message' , 'confirm'] | Modal type for displaying message modal or a confirmation modal |
 | show | false | Boolean | Show and hide the modal using this attribute |
 | handleClose |   | Function | Callback function for cancel button |
 | handleConfirm |   | Function | Callback function for confirm button |
