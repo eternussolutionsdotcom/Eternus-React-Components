@@ -1,24 +1,16 @@
-import React, { Component } from 'react';
-import {Menu} from '../../src';
-import eternus from '../../src/components/Menu/eternus.png';
-import profile from '../../src/components/Menu/profile.png'
-
-export default class MenuComponent extends Component {
-
-    render() {
-
-        const Menuoptions =  [
-            {
-                name: "Dashboard",
-                url: "/",
-                icon: "fa fa-dashcube"
-            },
-            {
-                name: "About",
-                url: "/abc",
-                icon: "fa fa-dashcube"
-            },
-            {
+export default {
+    items: [
+        {
+            name: "Dashboard",
+            url: "/",
+            icon: "fa fa-dashcube"
+        },
+        {
+            name: "About",
+            url: "/abc",
+            icon: "fa fa-dashcube"
+        },
+        {
             name: "Home",
             url: "/",
             icon: "fa fa-dashcube",
@@ -34,7 +26,7 @@ export default class MenuComponent extends Component {
                     icon: "fa fa-dashcube",
                     children: [
                         {
-                            name: "sublink1",
+                            name: "naatu1",
                             url: "/",
                             icon: "fa fa-dashcube",
                         },
@@ -66,42 +58,18 @@ export default class MenuComponent extends Component {
                 }
             ]
         },
-            {
-                name: "Contact",
-                url: "/",
-                icon: "fa fa-dashcube",
-                children: [
-                    {
-                        name: "Email",
-                        url: "/",
-                        icon: "fa fa-dashcube"
-                    }
-                ]
-            },
-    
-        ]
-        const profileOptions =  [
-            {
-                name: "Login",
-                url: "/",
-                icon: "fa fa-dashcube"
-            },
-            {
-                name: "Log Out",
-                url: "/abc",
-                icon: "fa fa-dashcube"
-            }]
+        {
+            name: "Contact",
+            url: "/",
+            icon: "fa fa-dashcube",
+            children: [
+                {
+                    name: "Email",
+                    url: "/",
+                    icon: "fa fa-dashcube"
+                }
+            ]
+        },
 
-        return (
-            <Menu
-            Menuoptions={Menuoptions}
-            brandName="Brandname"
-            logoUrl = {eternus}
-            profileOptions={profileOptions}
-            profileUrl={profile}
-            searchOption={true}
-            ></Menu>
-        )
-    }
-
-}
+    ]
+};
