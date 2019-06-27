@@ -5,7 +5,7 @@
 
 React components inspired by react-bootstrap.
 
-# Availale components
+# Available components
 
  - Dropdown
  - Login Component
