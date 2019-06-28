@@ -286,3 +286,107 @@ a {
     display: block;
   }
 }
+ 
+
+
+/**---------------------SIDEBARMENU CSS------------------------------**/
+
+.sidebar-nav {
+  position: relative;
+  flex: 1;
+  /* overflow-x: hidden; */
+  /* overflow-y: auto; */
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  width: 200px;
+  color: #fff;
+  background: black;
+  height: 100%;
+  
+  }
+  
+  .sidebar .nav {
+  width: 200px;
+  flex-direction: column;
+  min-height: 100% !important;
+  }
+  
+  .sidebar-fixed .sidebar {
+  position: fixed;
+  z-index: 1019;
+  width: 200px;
+  height: calc(100vh - 55px);
+  }
+  
+  .sidebar .nav-item {
+  position: relative;
+  margin: 0;
+  transition: background .3s ease-in-out;
+  
+  }
+  
+  li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+  }
+  
+  .sidebar .nav-dropdown-toggle {
+  position: relative;
+  }
+  
+  .sidebar .nav-link.active,
+  .sidebar .navbar .active.dropdown-toggle,
+  .navbar .sidebar .active.dropdown-toggle {
+  color: #fff;
+  background: red;
+  }
+  
+  .sidebar .nav-dropdown.open>.nav-dropdown-items {
+  max-height: 1500px;
+  }
+  
+  .sidebar .nav-dropdown-items {
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+  overflow-y: hidden;
+  transition: max-height .3s ease-in-out;
+  }
+  
+  .sidebar .nav-dropdown.open .nav-dropdown.open {
+  border-left: 0;
+  }
+  
+  .sidebar .nav-link,
+  .sidebar .navbar .dropdown-toggle,
+  .navbar .sidebar .dropdown-toggle {
+  font-size: 1rem !important;
+  color: #e8e8e8 !important;
+  }
+  
+  a:hover {
+  color: #167495;
+  text-decoration: underline;
+  }
+  
+   .nav-link:focus,
+   .nav-link:hover {
+  color: black;
+  }
+  
+  .sidebar .nav-link:hover,
+  .sidebar .navbar .dropdown-toggle:hover,
+  .navbar .sidebar .dropdown-toggle:hover {
+  color: #fff;
+  background: #292929;
+  }
+  
+  .sidebar .nav-link.active,
+  .sidebar .navbar .active.dropdown-toggle,
+  .navbar .sidebar .active.dropdown-toggle {
+  color: #fff;
+  background: #33444c;
+  }
+
+  .nav-dropdown-toggle a:hover {
+    color: skyblue !important;
+    }

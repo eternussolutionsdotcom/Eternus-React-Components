@@ -16,6 +16,11 @@ export { Menu };
 
 import ModalComponent from "./components/Modal/Modal";
 export { ModalComponent as Modal };
+import SidebarMenu from "./components/Menu/SidebarMenu";
+export { SidebarMenu };
+
+import Table from "./components/Table/Table";
+export { Table };
 
 //CSS
 import 'bootstrap/dist/css/bootstrap.min.css';

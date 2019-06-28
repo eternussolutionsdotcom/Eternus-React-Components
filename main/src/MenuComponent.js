@@ -7,7 +7,7 @@ export default class MenuComponent extends Component {
 
     render() {
 
-        const Menuoptions =  [
+        const menuoptions =  [
             {
                 name: "Dashboard",
                 url: "/aaa",
