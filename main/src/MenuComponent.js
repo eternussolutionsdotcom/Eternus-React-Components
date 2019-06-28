@@ -4,7 +4,19 @@ import {Menu} from '../../src';
 import profile from '../../src/components/Menu/profile.png'
 
 export default class MenuComponent extends Component {
-
+    constructor(props){
+        super(props);
+        this.state = {
+            searchKey : ""
+        }
+    }
+  
+    onChange = (e) => {
+        this.setState({searchKey : e.target.value});
+    }
+               onSubmit = () => {
+                   console.log("submit", this.state.searchKey);
+               }
     render() {
 
         const Menuoptions =  [
@@ -102,6 +114,9 @@ export default class MenuComponent extends Component {
                 profileOptions={profileOptions}
                 profileUrl={profile}
                 searchOption={true}
+                // searchKey={this.state.searchKey}
+                // onSearchKeyChange={this.onChange}
+                // onSearch={this.onSubmit}
             ></Menu>
         )
     }
