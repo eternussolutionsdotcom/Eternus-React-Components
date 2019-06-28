@@ -55,8 +55,8 @@ const Menu = props => {
       <Col md="4">
       {props.searchOption == true ? <li className="formStyle">
            <form className="form-inline">
-            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success" type="submit">Search</button>
+            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={props.onSearchKeyChange} value={props.searchKey} />
+            <button className="btn btn-outline-success" type="button" onClick={props.onSearch}>Search</button>
           </form>
          </li>:null}
       </Col>
@@ -84,6 +84,9 @@ Menu.propTypes = {
   searchOption: PropTypes.bool,
   profileOptions: PropTypes.arrayOf(PropTypes.object),
   profileUrl: PropTypes.string,
+  onSearchKeyChange : PropTypes.func,
+  searchKey : PropTypes.string,
+  onSearch : PropTypes.func,
 }
 
 Menu.defaultProps = {
@@ -99,7 +102,10 @@ Menu.defaultProps = {
     name: "Logout",
     url: "#",
   }],
-  profileUrl : "./profile.png"
+  profileUrl : "./profile.png",
+  onSearchKeyChange : () => {},
+  searchKey : "",
+  onSearch : () => {},
 }
 
 export default Menu;
