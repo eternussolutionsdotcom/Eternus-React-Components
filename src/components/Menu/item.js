@@ -1,47 +1,44 @@
 export default {
     items: [
         {
-            name: "Dashboard",
+            name: "Dashboard" ,
             url: "/",
-            
+            icon:"fa fa-home"
           
         },
         {
             name: "About",
             url: "/abc",
-          
+            icon:""
         },
         {
             name: "Home",
             url: "/",
-            
-          
+            rootParent : true,
             children: [
                 {
                     name: "Link1",
                     url: "/",
-                  
+                    icon:""
                 },
                 {
                     name: "Link2",
                     url: "/",
-                    rootItem:true,
                    
                     children: [
                         {
                             name: "Link1",
                             url: "/",
-                           
+                            icon:""
                         },
                         {
                             name: "Link3",
                             url: "/",
-                            rootItem:true,
                             children: [
                                 {
                                     name: "SubLink1",
                                     url: "/",
-                                   
+                                    icon:""
                                 },
                                 {
                                     name: "SubLink2",
@@ -60,20 +57,8 @@ export default {
                     ]
                 }
             ],
-            rootItem:true
-        },
-        {
-            name: "Contact",
-            url: "/",
-          
-            children: [
-                {
-                    name: "Email",
-                    url: "/",
-                   
-                }
-            ]
-        },
+        }
+        
 
     ]
 };

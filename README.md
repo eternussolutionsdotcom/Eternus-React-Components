@@ -334,6 +334,105 @@ Common props you need to specify include:
 | size  | 'md' | String['sm','md','lg'] | Size of modal |
 
 
+# Menu Component
+
+**Usage**
+
+```js
+import {Modal} from "eternus-react-component";
+import eternusLogo from "./eternus.png";
+import profile from "./profile.png";
+export default class Sample extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            searchKey: ''
+        };
+    }
+    onSearchKeyChange = (e) => {
+        //...
+    }
+
+    onSearch = () => {
+        //....
+    }
+
+    render() {
+            const menuOptions = [{
+                    name: "Dashboard",
+                    url: "/",
+                    icon: "fa fa-tasks"
+
+                },
+                {
+                    name: "Home",
+                    url: "/",
+                    icon: "fa fa-home",
+                    rootParent: true,
+                    children: [{
+                        name: "Link1",
+                        url: "/",
+                        icon: "fa fa-user",
+                        children: [
+                            //Upto any level
+                        ]
+                    }],
+                }
+            ]
+
+            const profileOptions = [{
+                name: "Logout",
+                url: "#",
+                icon: "fa fa-sign-out"
+            }]
+
+        return (
+            <div>
+                {/* --------- For horizontal menu ----------*/}
+                <Menu 
+                    alignment = "horizontal"
+                    menuOptions={menuOptions}
+                    logoUrl={eternusLogo}
+                    brandName="Eternus"  //optional
+                    profileUrl= {profile}
+                    searchOption={true}
+                    profileOptions={profileOptions}
+                    onSearchKeyChange ={this.onSearchKeyChange}
+                    searchKey = {this.state.searchKey}
+                    onSearch = {this.onSearch} />
+
+                {/* -------- For vertical menu ------------*/}
+                <Menu 
+                    alignment="vertical" 
+                    menuOptions={menuOptions}
+                    brandName="Eternus" //optional
+                    logoUrl={eternusLogo}
+                    />
+            </div>
+        )
+    }
+}
+
+```
+
+**Props**
+
+Common props you need to specify include:
+
+| **Props** | **Default** | **Type** | **Description** |
+| --- | --- | --- | --- |
+| alignment         | "horizontal"                | String[vertical,horizontal] | Alignment of menu                     |
+| menuOptions       | Array contains home  option | Array of objects            | Option menu for menu items            |
+| logoUrl           | Empty String                | String                      | Contains URL for logo                 |
+| profileUrl        | User image                  | String                      | Contains URL for profile              |
+| searchOption      | true                        | Boolean                     | Display or hide search option         |
+| profileOptions    |                             | Array of objects            | Option menu for profile               |
+| onSearchKeyChange |                             | Function                    | Handle onChange of search text box    |
+| searchKey         |                             | String                      | Value of search text box              |
+| onSearch          |                             | Function                    | Handle onClick event of search button |
+| brandName         | "Eternus"                   | String                      | Title for menu                        |
+
+
 # License
 
 This project is licensed under the MIT License.
