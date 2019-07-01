@@ -6,6 +6,7 @@ import LoginComponent from "./LoginComponent";
 import MenuComponent from "./MenuComponent"
 import ExportToExcelComponent from "./ExportToExcelComponent";
 import ModalComponent from "./ModalComponent";
+
 //You can experiment your developed components
 // using them here and run the command # npm start
 
@@ -19,10 +20,14 @@ const App = () => (
                        <FileUploadComponent/>
                        <LoginComponent/> 
                                  <ModalComponent/>
+                                  <MenuComponent/>
+                                   <SidebarMenuComponent/>
 
                     */
           }
-            <MenuComponent/>
+       
+       <MenuComponent/>
+     
       </div>
 
   

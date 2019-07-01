@@ -286,3 +286,120 @@ a {
     display: block;
   }
 }
+ 
+
+
+/**---------------------SIDEBARMENU CSS------------------------------**/
+
+.sidebar-nav {
+  position: relative;
+  flex: 1;
+  overflow-x: auto; 
+   overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  color: #fff;
+  background: black;
+  width: 250px;
+  height: 100%;
+  
+  }
+  
+  .sidebar .nav {
+     width: 250px;
+      flex-direction: column;
+  min-height: 100% !important;
+  }
+  
+  .sidebar-fixed .sidebar {
+  position: fixed;
+  z-index: 1019;
+  height: calc(100vh);
+   width: 250px;
+  }
+  
+  .sidebar .nav-item {
+  position: relative;
+  margin: 0;
+  transition: background .3s ease-in-out;
+   width: 250px;
+  }
+  
+  li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+  }
+  
+  .sidebar .nav-dropdown-toggle {
+  position: relative;
+  }
+  
+  .sidebar .nav-link.active,
+  .sidebar .navbar .active.dropdown-toggle,
+  .navbar .sidebar .active.dropdown-toggle {
+  color: #fff;
+  background: red;
+  }
+  
+  .sidebar .nav-dropdown.open>.nav-dropdown-items {
+  max-height: 1500px;
+  }
+  
+  .sidebar .nav-dropdown-items {
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+  overflow-y: hidden;
+  transition: max-height .3s ease-in-out;
+  }
+  
+  .sidebar .nav-dropdown.open .nav-dropdown.open {
+  border-left: 0;
+  }
+  
+  .sidebar .nav-link,
+  .sidebar .navbar .dropdown-toggle,
+  .navbar .sidebar .dropdown-toggle {
+  /* font-size: 1rem !important; */
+  color: #e8e8e8 !important;
+  }
+  
+  .nav-link-child{
+    font-size: 0.8rem !important;
+    color: #e8e8e8 !important;
+    margin-left:10px;
+  }
+  a:hover {
+  color: #167495 !important;
+  text-decoration: underline;
+  }
+  
+   .nav-link:focus,
+   .nav-link:hover 
+   .nav-link-child:focus
+   .nav-link-child:hover
+   {
+  color:  #167495 !important;
+  }
+  
+  .sidebar .nav-link:hover, .nav-link-child:hover
+  .sidebar .navbar .dropdown-toggle:hover,
+  .navbar .sidebar .dropdown-toggle:hover {
+  color: #fff;
+  background: #292929;
+  }
+  
+  .sidebar .nav-link.active, .nav-link-child:active
+  .sidebar .navbar .active.dropdown-toggle,
+  .navbar .sidebar .active.dropdown-toggle {
+  color: #fff;
+  background: #33444c;
+  }
+
+  /* .sidebar .nav-link,
+  .sidebar .navbar .dropdown-toggle,
+  .navbar .sidebar .dropdown-toggle a:hover {
+    color: skyblue !important;
+    } */
+
+
+

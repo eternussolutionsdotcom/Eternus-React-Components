@@ -1,124 +1,75 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react'
 import {Menu} from '../../src';
-//import eternus from '../../src/components/Menu/eternus.png';
-import profile from '../../src/components/Menu/profile.png'
+import eternusLogo from "./eternus.png";
+import profile from "./profile.png";
 
 export default class MenuComponent extends Component {
-    constructor(props){
-        super(props);
+    constructor(props) {
+        super(props)
         this.state = {
-            searchKey : ""
-        }
+            searchKey: ''
+        };
     }
-  
-    onChange = (e) => {
-        this.setState({searchKey : e.target.value});
+    onSearchKeyChange = (e) => {
+        //...
     }
-               onSubmit = () => {
-                   console.log("submit", this.state.searchKey);
-               }
-    render() {
 
-        const Menuoptions =  [
-            {
-                name: "Dashboard",
-                url: "/aaa",
-                icon: "fa fa-dashcube"
-            },
-            {
-                name: "About",
-                url: "/abc",
-                icon: "fa fa-dashcube"
-            },
-            {
-            name: "Home",
-            url: "/",
-            icon: "fa fa-dashcube",
-            rootParent:true,
-            children: [
-                {
-                    name: "Link1",
+    onSearch = () => {
+        //....
+    }
+
+    render() {
+            const menuOptions = [{
+                    name: "Dashboard",
                     url: "/",
-                    icon: "fa fa-dashcube",
+                    icon: "fa fa-tasks"
+
                 },
                 {
-                    name: "Link2",
+                    name: "Home",
                     url: "/",
-                    icon: "fa fa-dashcube",
-                    children: [
-                        {
-                            name: "Sublink1",
-                            url: "/",
-                            icon: "fa fa-dashcube",
-                        },
-                        {
-                            name: "Link3",
-                            url: "/",
-                            icon: "fa fa-dashcube",
-                            children: [
-                                {
-                                    name: "SubLink1",
-                                    url: "/",
-                                    icon: "fa fa-dashcube",
-                                },
-                                {
-                                    name: "SubLink2",
-                                    url: "/",
-                                    icon: "fa fa-dashcube",
-                                    children: [
-                                        {
-                                            name: "SubLink",
-                                            url: "/",
-                                            icon: "fa fa-dashcube"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                    icon: "fa fa-home",
+                    rootParent: true,
+                    children: [{
+                        name: "Link1",
+                        url: "/",
+                        icon: "fa fa-user",
+                        children: [
+                            //Upto any level
+                        ]
+                    }],
                 }
             ]
-        },
-            {
-                name: "Contact",
-                url: "/",
-                icon: "fa fa-dashcube",
-                rootParent:true,
-                children: [
-                    {
-                        name: "Email",
-                        url: "/",
-                        icon: "fa fa-dashcube"
-                    }
-                ]
-            },
-    
-        ]
-        const profileOptions =  [
-            {
-                name: "Login",
-                url: "/",
-                icon: "fa fa-dashcube"
-            },
-            {
-                name: "Log Out",
-                url: "/abc",
-                icon: "fa fa-dashcube"
+
+            const profileOptions = [{
+                name: "Logout",
+                url: "#",
+                icon: "fa fa-sign-out"
             }]
 
         return (
-            <Menu
-                Menuoptions={Menuoptions}
-                brandName="Brandname"
-                //logoUrl = {eternus}
-                profileOptions={profileOptions}
-                profileUrl={profile}
-                searchOption={true}
-                // searchKey={this.state.searchKey}
-                // onSearchKeyChange={this.onChange}
-                // onSearch={this.onSubmit}
-            ></Menu>
+            <div>
+                {/* ---- For horizontal menu */}
+                {/* <Menu 
+                    alignment = "horizontal"
+                    menuOptions={menuOptions}
+                    logoUrl={eternusLogo}
+                    brandName="Eternus"  //optional
+                    //profileUrl={profile}
+                    searchOption={true}
+                    profileOptions={profileOptions}
+                    onSearchKeyChange ={this.onSearchKeyChange}
+                    searchKey = {this.state.searchKey}
+                    onSearch = {this.onSearch} /> */}
+
+                {/* ---- For vertical menu */}
+                <Menu 
+                    alignment="vertical" 
+                    menuOptions={menuOptions}
+                    brandName="Eternus" //optional
+                    logoUrl={eternusLogo}
+                    />
+            </div>
         )
     }
-
 }
