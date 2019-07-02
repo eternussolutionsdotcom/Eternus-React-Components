@@ -11,8 +11,8 @@ React components inspired by react-bootstrap.
  - Login Component
  - File Upload
  - Export to Excel
- 
 
+ 
 # Install
 
 ``` bash
@@ -339,7 +339,7 @@ Common props you need to specify include:
 **Usage**
 
 ```js
-import {Modal} from "eternus-react-component";
+import {Menu} from "eternus-react-component";
 import eternusLogo from "./eternus.png";
 import profile from "./profile.png";
 export default class Sample extends Component {
