@@ -11,7 +11,8 @@ React components inspired by react-bootstrap.
  - Login Component
  - File Upload
  - Export to Excel
- 
+ - Modal Component
+ - Menu Component
 
 # Install
 
@@ -177,7 +178,7 @@ export default class Sample extends Component {
 					browseButtonTitle = "Browse"
 					uploadButtonTitle = "Upload"
 					accept = ".xls,.xlsx,.txt"
-					size = {1}
+					size = {1} // size in kb
 					multiple = {true}
                     variant = "success"
                     fileResponse = {this.getFiles}
@@ -339,7 +340,7 @@ Common props you need to specify include:
 **Usage**
 
 ```js
-import {Modal} from "eternus-react-component";
+import {Menu} from "eternus-react-component";
 import eternusLogo from "./eternus.png";
 import profile from "./profile.png";
 export default class Sample extends Component {
