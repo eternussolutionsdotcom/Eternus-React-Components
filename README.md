@@ -1,4 +1,4 @@
- ![](/Eternus-React-Components-1/main/src/eternus.png)
+ ![](/https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-png-transparent.png)
  # Eternus-React-Components
 www.eternussolutions.com
 ![](\main\src\eternus.png)
