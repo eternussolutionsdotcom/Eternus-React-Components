@@ -11,6 +11,8 @@ React components inspired by react-bootstrap.
  - Login Component
  - File Upload
  - Export to Excel
+ - Modal Component
+ - Menu Component
 
  
 # Install
@@ -177,7 +179,7 @@ export default class Sample extends Component {
 					browseButtonTitle = "Browse"
 					uploadButtonTitle = "Upload"
 					accept = ".xls,.xlsx,.txt"
-					size = {1}
+					size = {1} // size in kb
 					multiple = {true}
                     variant = "success"
                     fileResponse = {this.getFiles}

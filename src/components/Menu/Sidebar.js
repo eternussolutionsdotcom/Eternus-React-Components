@@ -69,7 +69,7 @@ function Sidebar(props) {
                     }}
                     href="/"
                 >
-                  { !props.logoUrl ? props.brandName :<img src={props.logoUrl}></img>}
+                  { !props.logoUrl ? props.brandName :<img src={props.logoUrl} height="40" width="40"></img>}
                 </a>
             </li>
         )

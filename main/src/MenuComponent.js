@@ -50,7 +50,7 @@ export default class MenuComponent extends Component {
         return (
             <div>
                 {/* ---- For horizontal menu */}
-                {/* <Menu 
+                <Menu 
                     alignment = "horizontal"
                     menuOptions={menuOptions}
                     logoUrl={eternusLogo}
@@ -60,15 +60,15 @@ export default class MenuComponent extends Component {
                     profileOptions={profileOptions}
                     onSearchKeyChange ={this.onSearchKeyChange}
                     searchKey = {this.state.searchKey}
-                    onSearch = {this.onSearch} /> */}
+                    onSearch = {this.onSearch} />
 
                 {/* ---- For vertical menu */}
-                <Menu 
+                {/* <Menu 
                     alignment="vertical" 
                     menuOptions={menuOptions}
                     brandName="Eternus" //optional
                     logoUrl={eternusLogo}
-                    />
+                    /> */}
             </div>
         )
     }
