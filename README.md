@@ -2,6 +2,8 @@
 # Eternus-React-Components
 www.eternussolutions.com
 
+[![](https://www.eternussolutions.com/wp-content/uploads/2016/07/logo_e_facebook.png)]
+
 [![NPM](https://img.shields.io/npm/v/react-select.svg)](https://www.npmjs.com/package/react-bootstrap)
 
  
