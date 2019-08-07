@@ -1,6 +1,6 @@
-![](/Eternus-React-Components/blob/dev/main/src/eternus.png)
-# Eternus-React-Components
-www.eternussolutions.com
+# Eternus-React-Components 
+www.eternussolutions.com 
+
 
 [![NPM](https://img.shields.io/npm/v/react-select.svg)](https://www.npmjs.com/package/react-bootstrap)
 
