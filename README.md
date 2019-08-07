@@ -1,4 +1,3 @@
-![Alt text](/eternussolutionsdotcom/Eternus-React-Components/blob/master/main/src/eternus.png) 
 # Eternus-React-Components
 www.eternussolutions.com
 
