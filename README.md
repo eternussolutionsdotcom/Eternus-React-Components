@@ -1,8 +1,11 @@
-# Eternus-React-Components
+# Eternus-React-Components 
+www.eternussolutions.com
+
+[![eternussolutions](src/assets/images/espl-logo.png)](https://www.eternussolutions.com/)
 
 [![NPM](https://img.shields.io/npm/v/react-select.svg)](https://www.npmjs.com/package/react-bootstrap)
 
-
+ 
 React components inspired by react-bootstrap.
 
 # Available components
@@ -14,6 +17,7 @@ React components inspired by react-bootstrap.
  - Modal Component
  - Menu Component
 
+ 
 # Install
 
 ``` bash
