@@ -1,6 +1,7 @@
 # Eternus-React-Components 
-www.eternussolutions.com 
+www.eternussolutions.com
 
+[![eternussolutions](src/assets/images/espl-logo.png)](https://www.eternussolutions.com/)
 
 [![NPM](https://img.shields.io/npm/v/react-select.svg)](https://www.npmjs.com/package/react-bootstrap)
 
